@@ -11,6 +11,7 @@ import Biopic from "../../components/Biopic/Biopic"
 import {Helmet} from "react-helmet";
 
 const HomeScreen = () => {
+
   return (
     <div className="page-container">
 
@@ -20,7 +21,7 @@ const HomeScreen = () => {
         
         <Header />
 
-        <Biopic></Biopic>
+        <Biopic ></Biopic>
 
         <BackgroundEffect />
 

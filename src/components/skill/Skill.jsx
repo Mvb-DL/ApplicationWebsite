@@ -1,13 +1,12 @@
 import DATA from "../../constant/mockData";
 import Title from "../common/Title";
 import PropTypes from "prop-types";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const Skill = () => {
 
-
   return (
-    <div className="skill-sc resume-block">
+    <div className="skill-sc resume-block" >
       <div className="container" >
         <div className="skill-content dotted-border-left">
           <Title titleText={"Programming Skills"} />
@@ -78,7 +77,7 @@ const SkillItem = ({ item }) => {
         <p className="skill-description text">{isHovered ? "" : item.description }</p>
       </div>
       <div>
-        <span><h3><b>Skill-Level:</b></h3> <h2 className="skill_level">{isHovered ? "" : item.skill_level }</h2></span>
+        {isHovered ? "" : <span><h3><b>Skill-Level:</b></h3> <h2 className="skill_level">{item.skill_level}</h2></span>}
       </div>
       </div>
 

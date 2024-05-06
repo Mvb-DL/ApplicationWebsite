@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Mario } from "../../assets/image";
 
 const Biopic = () => {
+
+
   return (
 
     <div className="biopic-sc resume-block">
@@ -10,7 +12,6 @@ const Biopic = () => {
             
         <div className="biopic-content grid">
 
-        
             <div className="biopic-intro item_one1">
 
                 <h2 className="biopic-header-name">
@@ -23,10 +24,15 @@ const Biopic = () => {
                     <p className="pic-text">... Mario, 24 aus Würzburg</p>
   
 
-              <p className="biopic-text text-white">
-                    Max Müller, 23 Jahre alt, ist ein lebenslustiger und ehrgeiziger Student, der an der Universität seiner Heimatstadt Wirtschaftswissenschaften studiert. Sein Tag beginnt früh morgens um 7 Uhr.
-                    Nach einem schnellen Frühstück und einer Tasse Kaffee macht er sich auf den Weg zur Uni. 
-              </p>
+              <ul className="biopic-text text-white">
+                   <li>Hobbies: Laufen, Boxen, Lesen</li> 
+                   <li>Interessen: Musik, Popkultur, Geschichte</li>
+                   <li>List 2</li>
+                   <li>List 2</li>
+                   <li>List 2</li>
+              </ul>
+
+
             </div>
 
             <div className="item_one2 website_structure">
@@ -71,7 +77,7 @@ const Biopic = () => {
                         </div>
 
                         <div class=" timeline-component timeline-content">
-                            <h4 className="text-center">Projekte</h4>
+                        <h4  className="text-center">Projekte</h4>
                         </div>
 
                        </div>

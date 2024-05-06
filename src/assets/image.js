@@ -49,13 +49,15 @@ import Mario from "./images/mario.png";
 import Ableton from "./images/ableton.svg"
 import CGI from "./images/cgi.svg"
 import Word from "./images/word.svg"
-
+import Waldorf from "./images/waldorf.svg"
+import UniWien from "./images/uni_wien.svg"
 
 export {
   SkillDesign,
   Word,
   CGI,
   Github,
+  Waldorf,
   Ableton,
   Mario,
   SkillPhp,
@@ -85,6 +87,7 @@ export {
   SkillBlender,
   SkillPython,
   Figma,
+  UniWien,
   CompanyLogo1,
   CompanyLogo2,
   CompanyLogo3,

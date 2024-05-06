@@ -12,7 +12,7 @@ class CannonHelper{
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
         // LIGHTS
-        const ambient =new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 ); 
+        const ambient =new THREE.HemisphereLight( 0xffffbb, 0x080820, .8); 
         this.scene.add( ambient );
 
         const light = new THREE.DirectionalLight( 0xdddddd, .25, 1 );
@@ -515,8 +515,8 @@ loader.load( 'https://raw.githubusercontent.com/baronwatts/models/master/astrona
   player.scale.set(.25,.25,.25);
   mesh.add(player);
 
-  const spotlight = new THREE.SpotLight(0xffffff, 0.7);
-  spotlight.position.set(50, 10, -4); // Set initial position
+  const spotlight = new THREE.SpotLight(0xffffff, 1);
+  spotlight.position.set(50, 10, 5); // Set initial position
   spotlight.angle = Math.PI / 2; // Set spotlight angle
   scene.add(spotlight);
 
@@ -713,10 +713,6 @@ const loader2 = new THREE.FontLoader();
 
 loader2.load('./font/Hack_Bold.json', function ( font ) {
 
-
-
-
-
 function onClick( event ) {
 
      const mouse = new THREE.Vector2(
@@ -736,8 +732,8 @@ function onClick( event ) {
 
   const geometry_text_two = new THREE.TextGeometry('PILLAP', {
 		font: font,
-		size: 50,
-    height: 50,
+		size: 75,
+    height: 75,
 	} );
 
   var textMesh2 = new THREE.Mesh( geometry_text_two, [
@@ -745,17 +741,26 @@ function onClick( event ) {
   )
 
   textMesh2.scale.set(.1, .1, .1);
-  textMesh2.position.x = -40;
-  textMesh2.position.y = 16;
+  textMesh2.position.x = -20;
+  textMesh2.position.y = 13;
   textMesh2.position.z = 90;
   textMesh2.rotation.y = 700;
   scene.add( textMesh2 );
 
+  textMesh2.addEventListener('click', function() {
+    // Call your function here
+    yourFunction();
+  });
 
-  const geometry_text_three = new THREE.TextGeometry('GitHub', {
+  function yourFunction() {
+  // Your function logic here
+    console.log("Text Mesh Clicked!");
+  }
+
+  const geometry_text_three = new THREE.TextGeometry('GITHUB', {
 		font: font,
-		size: 50,
-    height: 50,
+		size: 80,
+    height: 80,
 	} );
 
   var textMesh3 = new THREE.Mesh( geometry_text_three, [
@@ -764,10 +769,10 @@ function onClick( event ) {
   )
 
   textMesh3.scale.set(.1, .1, .1);
-  textMesh3.position.x = -80;
-  textMesh3.position.y = 8;
-  textMesh3.position.z = 70;
-  textMesh3.rotation.y = 750;
+  textMesh3.position.x = -90;
+  textMesh3.position.y = 4;
+  textMesh3.position.z = 90;
+  textMesh3.rotation.y = 800;
   scene.add( textMesh3 );
 
   const spotLight = new THREE.DirectionalLight( 0x6225e6, .1 );
@@ -776,25 +781,6 @@ function onClick( event ) {
 
 
 } );
-
-
-
-const material4 = new THREE.LineBasicMaterial({
-	color: 0x6225e6,
-  linewidth: 1,
-});
-
-const points2 = [];
-points2.push( new THREE.Vector3( -120, 1, 100 ) );
-points2.push( new THREE.Vector3( -70, 5, 100 ) );
-
-const geometry4 = new THREE.BufferGeometry().setFromPoints( points2 );
-
-const line2 = new THREE.Line( geometry4, material4 );
-scene.add( line2);
-
-
-
 
 //===================================================== add sky particles
   var textureLoader = new THREE.TextureLoader();
@@ -831,7 +817,6 @@ scene.add( line2);
     d.x = randnum(-500, 500);
     d.z = randnum(-500, 500);
   });
-
 
 
 //===================================================== Joystick
@@ -995,9 +980,6 @@ var lastTime;
   world.step(fixedTimeStep, dt);
   helper.updateBodies(world);
 
-
   if(check) check();
 
-
- 
 })();

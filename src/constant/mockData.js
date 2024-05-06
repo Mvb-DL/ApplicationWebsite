@@ -31,7 +31,9 @@ import {
   SkillBlender,
   SkillDesign,
   Ableton,
-  Word
+  Word,
+  Waldorf,
+  UniWien
 
 } from "../assets/image";
 
@@ -46,14 +48,14 @@ const DATA = {
       company: {
         logo: CGI,
         name: "CGI",
-        info: "IT-Consulting / Software Dev, Frankfurt am Main",
+        info: "IT-Consulting, Frankfurt am Main",
       },
       description:
         "PwC bietet branchenspezifische Dienstleistungen in den Bereichen Wirtschaftsprüfung, Steuerberatung und Unternehmensberatung.",
       links: [
         {
           label: "CGI",
-          url: "https://www.pwc.de/",
+          url: "https://www.cgi.com/de/de",
         },
       ],
     },
@@ -73,7 +75,7 @@ const DATA = {
       links: [
         {
           label: "THWS",
-          url: "https://www.castell-bank.de/",
+          url: "https://www.thws.de/",
         },
       ],
     },
@@ -83,12 +85,12 @@ const DATA = {
 
     {
       id: "edu_1",
-      icon:"",
-      course: "Veitshöchheim Gymnasium",
-      institution: "Veitshöchheim Gymnasium",
+      icon: Waldorf,
+      course: "Waldorfschule Würzburg",
+      institution: "Waldorfschule Würzburg",
       degree: "Abitur",
-      startDate: "2007",
-      endDate: "2021",
+      startDate: "2006",
+      endDate: "2019",
       position: "begin"
     },
 
@@ -106,12 +108,12 @@ const DATA = {
 
     {
       id: "edu_3",
-      icon: "",
-      course: "WU Wien",
+      icon: UniWien,
+      course: "Uni Wien",
       institution: "WU Wien",
       degree: "Master",
       startDate: "2024",
-      endDate: "2025",
+      endDate: "~",
       position: "end"
     },
 
@@ -201,7 +203,7 @@ const DATA = {
       id: "skill_9",
       icon: SkillBlender,
       name: "Blender",
-      skill_level: "50%",
+      skill_level: "5/10",
       skill: "blender",
     },
 
@@ -209,7 +211,7 @@ const DATA = {
       id: "skill_10",
       icon: Ableton,
       name: "Ableton",
-      skill_level: "75%",
+      skill_level: "7/10",
       skill: "ableton",
     },
 
@@ -217,7 +219,7 @@ const DATA = {
       id: "skill_11",
       icon: SkillDesign,
       name: "InDesign",
-      skill_level: "75%",
+      skill_level: "8/10",
       skill: "design",
     },
 
@@ -225,7 +227,7 @@ const DATA = {
       id: "skill_12",
       icon: Word,
       name: "Microsoft Office",
-      skill_level: "85%",
+      skill_level: "8/10",
       skill: "micro",
     },
   ],

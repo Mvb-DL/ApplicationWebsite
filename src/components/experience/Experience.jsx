@@ -63,7 +63,7 @@ const ExperienceItem = ({ item }) => {
       <p className="exp-description text">{item.description}</p>
       <div className="exp-links">
         {item.links?.map((link) => (
-          <a key={link.label} href={link.url} className="text-mauve">
+          <a key={link.label} href={link.url} target="_blank" className="text-mauve">
             <FaLink />
             <span>{link.label}</span>
           </a>

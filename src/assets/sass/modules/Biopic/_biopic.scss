@@ -1,11 +1,11 @@
 .biopic-sc{
 
     .me{
+      border: solid 1px white;
       height: 250px;
       width: auto;
       float: left;
       margin-right: 10px;
-      padding: 0%;
       opacity: 0.8;
 
       @media(max-width: 992px){
@@ -16,7 +16,6 @@
 
     margin-bottom: 5%;
 
-
     .biopic-content{
         display: grid;
         margin-left: 12%;
@@ -24,7 +23,7 @@
         grid-template-columns: repeat(2, 1fr);
         justify-content: center;
         align-content: center;
-        padding: 20px;
+        padding: 0px;
         box-shadow: rgb(32, 34, 38, 0.15) 0px 5px 15px 0px;
         background-color: rgb(32, 34, 38, 0.85);
         border-radius: 8px;
@@ -33,7 +32,7 @@
             grid-template-columns: repeat(1, 1fr);
             padding: 16px;
             margin-left: 5%;
-          margin-right: 5%;
+            margin-right: 5%;
         }
 
     }
@@ -66,6 +65,7 @@
 
     .item_one2 {
         grid-column: 2 / 2; 
+        padding: 20px;
         @media(max-width: 720px){
           grid-column: 2 / 1;
        }
@@ -74,6 +74,7 @@
       .biopic-header-name{
         margin-top: 5%;
         margin-left: 5%;
+        padding-bottom: 15px;
 
       }
   
@@ -103,6 +104,11 @@
     flex-direction: column;
   }
 
+  .timeline-component:hover{
+    color:#6225e6;
+    scale: (1.1);
+    cursor: pointer;
+  }
   
   .timeline-content {
     background: #1f1f1f;

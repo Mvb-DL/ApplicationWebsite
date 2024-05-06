@@ -1,7 +1,7 @@
 import DATA from "../../constant/mockData";
 import Title from "../common/Title";
 import PropTypes from "prop-types";
-import React, { useState, useEffect } from 'react';
+
 
 const Education = () => {
   return (
@@ -16,8 +16,6 @@ const Education = () => {
               <EducationItem key={item.id} item={item}  />
             ))}
 
-            
-           
           </div>
         </div>
       </div>
@@ -28,7 +26,6 @@ const Education = () => {
 export default Education;
 
 const EducationItem = ({ item }) => {
-
 
   const getClassname = () => {
 
@@ -47,8 +44,8 @@ const EducationItem = ({ item }) => {
       <div className={getClassname()} id="box" key={item.id} style={{border: "solid 2px white",
                                              borderRadius: "15px", padding: "2%"}} >
         <div className="edu-title flex items-center">
-          <img src={item.icon} className="edu-icon" alt={item.course} />
           <h3 className="edu-course">{item.course}</h3>
+          <img src={item.icon} className="edu-icon" alt={item.course} />
         </div>
         <p className="edu-info text">
           {item.institution}, {item.startDate} - {item.endDate || "Present"}

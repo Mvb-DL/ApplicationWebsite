@@ -4,6 +4,21 @@ import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import GLBViewer from "../../components/model/Model"
 
 const Header = () => {
+
+  const phoneNumber = '+49 1577 3633756';
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+          
+      })
+      .catch((error) => {
+        console.error('Unable to copy text to clipboard:', error);
+        // You can optionally show an error message here
+      });
+  };
+
+
   return (
 
     <header className="header">
@@ -21,7 +36,7 @@ const Header = () => {
               </h1>
    
             </div>
-            <p className="header-text text text-white">
+            <p className="header-text text-white">
             Am 1.Oktober 2024 beginne ich meinen Master in Informatik an der Uni Wien. 
             Daher suche ich einen Job und das ist meine selbst programmierte Bewerbung hierfür. 
             </p>
@@ -33,7 +48,7 @@ const Header = () => {
                     <FaEnvelope size={13} />
                   </span>
                   <p className="info-item-text">
-                    <span className="text">mariovonbassen@email.com</span>
+                    <span className="text"><a href="mailto:your-email@example.com">mariovonbassen@email.com</a></span>
                   </p>
               </li>
 
@@ -43,7 +58,7 @@ const Header = () => {
                     <FaPhone size={13} />
                   </span>
                   <p className="info-item-text">
-                    <span className="text">+49 1577 3633756</span>
+                    <span className="text" onClick={() => copyToClipboard(phoneNumber)}>+49 1577 3633756</span>
                   </p>
               </li>
 
@@ -68,7 +83,7 @@ const Header = () => {
                 </li>
 
                 <li className="social-item">
-                    <a className="website-code" href="">Website-Code</a>
+                    <a className="website-code" target="_blank" href="https://github.com/Mvb-DL/ApplicationWebsite">Website-Code</a>
                 </li>
 
             </ul>

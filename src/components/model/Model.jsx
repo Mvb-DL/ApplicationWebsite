@@ -7,10 +7,10 @@ const Model = React.forwardRef((props, ref) => {
 
   const { camera } = useThree();
   const { scene } = useGLTF("src/assets/images/head2.glb");
-  scene.scale.set(2.3, 2, 2.3
+  scene.scale.set(2.4, 2.2, 2.2
   );
   scene.position.set(0.6, 2.315, .9)
-  camera.position.set(0.6, 2.7, 1.6);
+  camera.position.set(0.6, 2.75, 1.6);
   scene.rotation.x = .1;
   const modelRef = useRef();
 
@@ -29,6 +29,8 @@ const Model = React.forwardRef((props, ref) => {
     let targetRotationX = mouseY * Math.PI;
     targetRotationX = Math.max(-maxRotationX, Math.min(maxRotationX, targetRotationX));
     modelRef.current.rotation.x += (targetRotationX + modelRef.current.rotation.x) * -0.007;
+    modelRef.current.rotation.z += (targetRotationX + modelRef.current.rotation.z) * -0.001;
+
   };
 
   React.useEffect(() => {
@@ -50,20 +52,8 @@ const GLBViewer = () => {
   };
 
   const modelPosition = { x: 0.5, y: 2.2, z: 0.9 };
-  const lightPosition = { x: -.1, y: .7, z: .4 };
+  const lightPosition = { x: -.05, y: .75, z: .4 };
 
-  const Background = () => {
-    const { scene } = useThree();
-    const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('../../assets/images/alex.png', () => {
-      texture.repeat.set(400, 400);
-      texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-      scene.background = texture;
-    });
-
-    return null;
-  };
-  
   return (
     <div className="resume-block model-container-sc">
       <div className="container">
@@ -72,7 +62,6 @@ const GLBViewer = () => {
             <Canvas onMouseMove={handleMouseMove}>
               <pointLight position={[modelPosition.x + lightPosition.x, modelPosition.y + lightPosition.y, modelPosition.z + lightPosition.z]} intensity={0.6} />
               <Model mouse={mouse}/>
-              <Background/>
             </Canvas>
         </div>
       </div>

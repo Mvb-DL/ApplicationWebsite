@@ -75,8 +75,8 @@ const OtherSkills = () => {
                   <p className="skill-name">{item.name}</p>
                   <img src={item.icon} alt="" className="skill-icon" />
                 </div>
-                <div className="skill-bar ">
-                  <div className={getClassname()} ></div>
+                <div className="skill-bar">
+                  <div className={getClassname()} per={item.skill_level}></div>
                 </div>
             </div>
         </div>

@@ -107,6 +107,20 @@
         color: #fff
     }
 
+    .text{
+        cursor: 'pointer'
+    }
+
+    .text:hover {
+        color:#6225e6;
+        cursor: 'pointer'
+    }
+
+    .website-code:hover{
+        color:#6225e6;
+        cursor: 'pointer'
+    }
+
     .contact-info-list{
         row-gap: 10px;
 

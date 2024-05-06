@@ -96,6 +96,42 @@
     &.micro { --color: #2D83D4; filter: saturate(175%);  width: 85%; }
   }
 
+  .skill-per::before{
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: var(--color);
+    border-radius: 4px;
+    font-size: 8px;
+    font-weight: 300;
+    color: white;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+
+    &.blender { --background: #FF6D00; }
+    &.design { --background: #E91E63;}
+    &.ableton { --background: #EEEEEE;}
+    &.micro { --background: #2D83D4;}
+  }
+  
+  .skill-per::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color);
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+
+    &.blender { --background: #FF6D00;}
+    &.design { --background: #E91E63;}
+    &.ableton { --background: #EEEEEE;}
+    &.micro { --background: #2D83D4;}
+  } 
+
   .language-box{
     display: grid;
     column-gap: 4px;
@@ -120,30 +156,8 @@
     }
   }
   
-  /*
-  .skill-per::before{
-    content: attr(per);
-    position: absolute;
-    padding: 4px 6px;
-    background: #f1f1f1;
-    border-radius: 4px;
-    font-size: 12px;
-    top: -35px;
-    right: 0;
-    transform: translateX(50%);
-  }
-  
-  .skill-per::after{
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #f1f1f1;
-    top: -20px;
-    right: 0;
-    transform: translateX(50%) rotate(45deg);
-    border-radius: 2px;
-  } */
+
+ 
 
   @keyframes fillBars{
     from{
