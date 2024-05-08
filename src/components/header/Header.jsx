@@ -53,7 +53,7 @@ const Header = () => {
                     <FaEnvelope size={13} />
                   </span>
                   <p className="info-item-text">
-                    <span className="text"><a href="mailto:your-email@example.com">mariovonbassen@email.com</a></span>
+                    <span className="text"><a href="mailto:mariovonbassen@gmail.com">mariovonbassen@gmail.com</a></span>
                   </p>
               </li>
 
