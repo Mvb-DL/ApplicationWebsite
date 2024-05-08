@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Mvb-DL.github.io/Mvb-DL.github.io",
+  "homepage": "https://Mvb-DL.github.io/ApplicationWebsite",
 
   "scripts": {
     "dev": "vite",
