@@ -1,7 +1,10 @@
 import Title from "../common/Title";
 import DATA from "../../constant/mockData";
+import { useGlobalState } from "../../components/changeLang/ChangeLang";
 
 const OtherSkills = () => {
+  
+  const { data } = useGlobalState();
     return (
       <div className="other-skills-sc resume-block">
 
@@ -9,11 +12,11 @@ const OtherSkills = () => {
 
           <div className="dotted-border-left">
 
-            <Title titleText={"Other Skills"} />
+            <Title titleText={data.titles.title_four}/>
 
             <div className="skill-content">
 
-              <h4 className="sub-headline">Programme</h4>
+              <h4 className="sub-headline">{data.titles.title_six}</h4>
 
               <div className="skill-list grid">
                 
@@ -23,18 +26,18 @@ const OtherSkills = () => {
 
               </div>
                 
-            <h4 className="sub-headline">Sprachen</h4>
+            <h4 className="sub-headline">{data.titles.title_five}</h4>
 
                 <div className="language-box">
 
                   <div>
                     
-                      <li className="language-text">Deutsch</li>
+                      <li className="language-text">{data.titles.title_seven}</li>
                   </div>
 
-                  <div><li className="language-text">Englisch (B2)</li></div>
+                  <div><li className="language-text">{data.titles.title_eight}</li></div>
 
-                  <div><li className="language-text">Französisch (A2)</li></div>
+                  <div><li className="language-text">{data.titles.title_nine}</li></div>
 
                 </div>
 

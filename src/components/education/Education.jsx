@@ -1,18 +1,18 @@
-import DATA from "../../constant/mockData";
 import Title from "../common/Title";
 import PropTypes from "prop-types";
-
+import { useGlobalState } from "../../components/changeLang/ChangeLang"
 
 const Education = () => {
+  const { data } = useGlobalState();
   return (
     <div className="education-sc resume-block" >
       <div className="container" >
         <div className="education-content dotted-border-left" >
-          <Title titleText={"Ausbildung"} />
+          <Title titleText={data.titles.title_two} />
           
           <div className="education-list grid" >
       
-            {DATA.educationalExperiences?.map((item) => (
+            {data.educationalExperiences?.map((item) => (
               <EducationItem key={item.id} item={item}  />
             ))}
 
@@ -49,7 +49,7 @@ const EducationItem = ({ item }) => {
         </div>
         <p className="edu-info text">
           {item.institution}, {item.startDate} - {item.endDate || "Present"}
-          {""}
+          {""}<br></br>
           ({item.degree && `${item.degree}`})
         </p>
 

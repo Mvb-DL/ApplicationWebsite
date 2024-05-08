@@ -1,8 +1,32 @@
-import { Link } from "react-router-dom";
 import { Mario } from "../../assets/image";
+import { useGlobalState } from "../../components/changeLang/ChangeLang";
+import TagCloud from 'TagCloud';
+import React, { useEffect, useState } from 'react'
+
 
 const Biopic = () => {
 
+    const container = '.content';
+
+    const options = {
+        radius: 100,
+        maxSpeed: 'normal',
+        initSpeed: 'normal',
+        direction: 135,
+        keep: true
+        };
+
+    const { data } = useGlobalState();
+
+    const [initialized, setInitialized] = useState(false);
+
+    useEffect(() => {
+        if (!initialized) {
+            TagCloud(container, data.cloud_text, options);
+            setInitialized(true);
+        }
+      }, []); 
+      
 
   return (
 
@@ -14,23 +38,35 @@ const Biopic = () => {
 
             <div className="biopic-intro item_one1">
 
-                <h2 className="biopic-header-name">
-                    Das bin ich...
-                </h2>
+                    <h2 className="biopic-header-name">
+                        {data.biopic_text.header_name}
+                    </h2>
 
-            
                     <img src={Mario} alt="avatar" className="me" /> 
 
-                    <p className="pic-text">... Mario, 24 aus Würzburg</p>
-  
+                    <p className="pic-text">{data.biopic_text.pic_text}</p>
+
+                    <div className="content"></div>
 
               <ul className="biopic-text text-white">
-                   <li>Hobbies: Laufen, Boxen, Lesen</li> 
-                   <li>Interessen: Musik, Popkultur, Geschichte</li>
-                   <li>List 2</li>
-                   <li>List 2</li>
-                   <li>List 2</li>
-              </ul>
+                
+                   <li id="head_attr">{data.biopic_text.hobbies}</li> 
+                   <li id="attr">{data.biopic_text.hobbies_attr}</li>
+                   <br></br>
+                   <li id="head_attr">{data.biopic_text.interest}</li>
+                    <li id="attr">{data.biopic_text.interest_attr}</li>
+                   <br></br>
+                   <div className="link-container">
+                        <a target="_blank" href="./public/docs/lebenslauf.pdf">{data.biopic_text.cv}</a>
+                        <a target="_blank" href="./public/docs/noten_mariovonbassen.pdf">{data.biopic_text.notes}</a> 
+                    </div>
+                   
+            </ul> 
+
+            <div className="link-container-big">
+                    <a target="_blank" href="./public/docs/lebenslauf.pdf">{data.biopic_text.cv}</a>
+                    <a target="_blank" href="./public/docs/noten_mariovonbassen.pdf">{data.biopic_text.notes}</a> 
+            </div>
 
 
             </div>
@@ -49,11 +85,11 @@ const Biopic = () => {
                         </div>
 
                         <div class="timeline-component timeline-content">
-                            <h4 className="text-center">Erfahrung</h4>
+                            <h4 className="text-center">{data.biopic_text.exp}</h4>
                         </div>
 
                         <div class="timeline-component timeline-content">
-                            <h4 className="text-center">Ausbildung</h4>
+                            <h4 className="text-center">{data.biopic_text.ausbildung}</h4>
                         </div>
 
                         <div class="timeline-middle">
@@ -73,11 +109,11 @@ const Biopic = () => {
                         </div>
 
                         <div class=" timeline-component timeline-content">
-                            <h4 className="text-center">Skills</h4>
+                            <h4 className="text-center">{data.biopic_text.skills}</h4>
                         </div>
 
                         <div class=" timeline-component timeline-content">
-                        <h4  className="text-center">Projekte</h4>
+                        <h4  className="text-center">{data.biopic_text.projects}</h4>
                         </div>
 
                        </div>

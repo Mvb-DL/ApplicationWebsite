@@ -1,12 +1,14 @@
 import Title from "../common/Title";
-import DATA from "../../constant/mockData";
+import { useGlobalState } from "../../components/changeLang/ChangeLang"
 
 const ExternDocs = () => {
 
+  const { data } = useGlobalState();
 
   return (
 
     <div className="extern_doc resume-block">
+      
       <div className="container">
         
         <div className="extern_content">
@@ -16,9 +18,9 @@ const ExternDocs = () => {
             <div className="extern-item text-center">
             <div className="skill-item">
               
-                <a href={DATA.externDocs.realpdf} target="_blank">
+                <a href={data.externDocs.realpdf} target="_blank">
 
-                <img className="extern_img" src={DATA.externDocs.logo} alt="" />
+                <img className="extern_img" src={data.externDocs.logo} alt="" />
                 <h3>Lebenslauf</h3>
 
             </a>

@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import { Linkedin, Github } from "../../assets/image";
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import GLBViewer from "../../components/model/Model"
+import { useGlobalState } from "../../components/changeLang/ChangeLang"
+
 
 const Header = () => {
+
+  const { data } = useGlobalState();
 
   const phoneNumber = '+49 1577 3633756';
 
@@ -14,7 +18,7 @@ const Header = () => {
       })
       .catch((error) => {
         console.error('Unable to copy text to clipboard:', error);
-        // You can optionally show an error message here
+
       });
   };
 
@@ -37,8 +41,9 @@ const Header = () => {
    
             </div>
             <p className="header-text text-white">
-            Am 1.Oktober 2024 beginne ich meinen Master in Informatik an der Uni Wien. 
-            Daher suche ich einen Job und das ist meine selbst programmierte Bewerbung hierfür. 
+            {data.headerText?.map((item) => (
+                item.header_text
+            ))}
             </p>
             <br></br>
             <ul className="contact-info-list grid text-white">
@@ -61,25 +66,22 @@ const Header = () => {
                     <span className="text" onClick={() => copyToClipboard(phoneNumber)}>+49 1577 3633756</span>
                   </p>
               </li>
-
-
             </ul>
 
-            
             <ul className="contact-social-list flex items-center">
 
                 <li className="social-item">
-                    <Link to="www.linkedin.com/in/mario-von-bassen-3797831ba">
+                    <a href="https://www.linkedin.com/in/mario-von-bassen-3797831ba/" target="_blank">
                         <img src={Linkedin} />
                         <span className="tooltip text">Linkedin</span>
-                    </Link>
+                    </a>
                 </li>
 
                 <li className="social-item">
-                    <Link to="/">
+                    <a href="https://github.com/Mvb-DL" target="_blank">
                         <img src={Github} />
                         <span className="tooltip text">Github</span>
-                    </Link>
+                    </a>
                 </li>
 
                 <li className="social-item">

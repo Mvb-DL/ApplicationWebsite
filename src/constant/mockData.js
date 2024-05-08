@@ -1,28 +1,17 @@
 import {
-  CompanyLogo1,
-  CompanyLogo2,
-  CompanyLogo3,
-  CompanyLogo4,
   DiamondLgBlue,
   DiamondLgGreen,
   DiamondLgOrange,
   DiamondLgPink,
   DiamondLgYellow,
-  SkillExcel,
-  SkillCss,
-  SkillFigma,
   SkillHtml5,
   SkillPhotoshop,
   SkillXd,
-  PDF,
   CGI,
-  English,
-  German,
   SkillPowerpoint,
   THWS,
   SkillPython,
   SkillJS,
-  Notes,
   SkillCplus,
   SkillKotlin,
   SkillSolidity,
@@ -38,6 +27,13 @@ import {
 } from "../assets/image";
 
 const DATA = {
+
+  headerText: [
+    {
+      header_text: "Am 1.Oktober 2024 beginne ich meinen Master in Informatik an der Uni Wien. Daher suche ich einen Job und das ist meine selbst programmierte Bewerbung hierfür. ",
+    }
+  ],
+
   professionalExperiences: [
     {
       id: "prof_exp_1",
@@ -51,7 +47,7 @@ const DATA = {
         info: "IT-Consulting, Frankfurt am Main",
       },
       description:
-        "PwC bietet branchenspezifische Dienstleistungen in den Bereichen Wirtschaftsprüfung, Steuerberatung und Unternehmensberatung.",
+        "11 Monate arbeitete ich bei CGI Consulting, davon 5 Monate in Danzig (Polen) als Fullstack Developer und IT-Consultant. \n\nIch sammelte vor allem Erfahrung im leiten und führen von kleineren Teams bis zu 6 Personen, im Entwickeln verschiedenster Applikationen mit Python (Django, Flask), VueJS und Solidity, sowie das regelmäßige Präsentieren von Projekterfolgen vor bis zu 800 Personen intern und extern vom Unternehmen. Mein Anstellung endete mit der Aufnahme meines Auslandssemesters in Belgien/Frankreich.",
       links: [
         {
           label: "CGI",
@@ -62,8 +58,8 @@ const DATA = {
     {
       id: "prof_exp_2",
       startDate: "März 2022",
-      endDate: "-",
-      position: "UI/UX-Design",
+      endDate: "Aug 2022",
+      position: "UI/UX-Designer",
       diamondColors: ["Blue", "Orange", "Pink"],
       company: {
         logo: THWS,
@@ -71,7 +67,7 @@ const DATA = {
         info: "Technische Hochschule Würzburg-Schweinfurt",
       },
       description:
-        "Die Fürstlich Castell’sche Bank, Credit-Casse AG ist ein in Franken ansässiges Kreditinstitut. Juristischer Sitz des Unternehmens ist Castell, die Hauptverwaltung und die Geschäftsführung befinden sich seit 1972 in Würzburg.",
+        "Als wissenschaftliche Hilfskraft der THWS war es meine Aufgabe UX-Design Prototypen zu entwickeln und anhand von Nutzertest zu validieren bzw. anschließend zu optimieren. \n\nDarüber hinaus war es Aufgabe die Nutzertests entsprechend vorzubereiten, zu protokollieren und im passenden Format zu präsentieren.",
       links: [
         {
           label: "THWS",
@@ -94,13 +90,12 @@ const DATA = {
       position: "begin"
     },
 
-
     {
       id: "edu_2",
       icon: THWS,
-      course: "Betriebswirtschaftslehre",
+      course: "E-Commerce B.Sc.",
       institution: "THWS",
-      degree: "Bachelor",
+      degree: "Bachelor of Science",
       startDate: "2021",
       endDate: "2024",
       position: "middle"
@@ -109,9 +104,9 @@ const DATA = {
     {
       id: "edu_3",
       icon: UniWien,
-      course: "Uni Wien",
-      institution: "WU Wien",
-      degree: "Master",
+      course: "Master Computer Science",
+      institution: "Universität Wien",
+      degree: "Master of Science",
       startDate: "2024",
       endDate: "~",
       position: "end"
@@ -127,7 +122,7 @@ const DATA = {
       skill_level: "9/10",
       skill: "python",
       project_name: "MetaMerce",
-      project_description: "A huge project to scan e-commerce websites with OCR and translate the scaned data into JSON-LD",
+      project_description: "Ein großes Projekt zum Scannen von E-Commerce-Websites mit OCR und zur Übersetzung der gescannten Daten in JSON-LD.",
       project_link: "https://github.com/Mvb-DL/MetaMerce"
     },
     {
@@ -138,7 +133,7 @@ const DATA = {
       skill_level: "7/10",
       skill: "js",
       project_name: "Munich Pieces",
-      project_description: "This is a Web-App where you can buy Munich Pieces (NFTs) of Art pieces in Munich to help museum to earn money",
+      project_description: "Eine Web-App, mit der man Munich Pieces (NFTs) von Kunstwerken von Münchner Museen kaufen kann, um dem Museum zu helfen, Einnahmen zu generieren.",
       project_link: "https://github.com/Mvb-DL/NFT-Munich-Pieces"
     },
     {
@@ -149,7 +144,7 @@ const DATA = {
       skill_level: "6/10",
       skill: "c",
       project_name: "Ableton Plugins",
-      project_description: "Meine größte Leidenschaft ist die Musik, in meiner Freizeit baue ich gerne Synthesizer, vor allem für Techno"
+      project_description: "Meine größte Leidenschaft ist die Musik, in meiner Freizeit baue ich gerne Synthesizer, vor allem für Techno."
     },
     {
       id: "skill_4",
@@ -159,7 +154,7 @@ const DATA = {
       skill_level: "6.5/10",
       skill: "kotlin",
       project_name: "CitIndi",
-      project_description: "An Android App written in Kotlin for managing my trips and stays in different places in the world",
+      project_description: "Eine in Kotlin geschriebene Android-App zur Verwaltung meiner Reisen und Aufenthalte an den verschiedensten Orten in der Welt.",
       project_link: "https://github.com/Mvb-DL/CitIndi"
     },
     {
@@ -286,19 +281,50 @@ const DATA = {
   },
 
   langOption:{
-    german_icon: German,
-    english_icon: English,
+    german_icon: "",
+    english_icon: "",
   },
 
   externDocs: 
     {
-      logo: PDF,
-      notes: Notes,
+      logo: "",
+      notes: "",
       realpdf: "./docs/lebenslauf.pdf"
       
-    }
+    },
 
+  biopic_text: {
+    header_name: "Das bin ich...",
+    pic_text: "Mario, 24 aus Würzburg",
+    hobbies: "Hobbies:",
+    hobbies_attr: "Laufen, Boxen, Lesen",
+    interest: "Interessen:",
+    interest_attr: "Musik, Popkultur, Geschichte",
+    cv: "Lebenslauf",
+    notes: "Noten",
+    ausbildung: "Ausbildung",
+    exp: "Erfahrung",
+    skills: "Skills",
+    projects: "Projekte"
+  },
 
+  titles: {
+    title_one: "Berufliche Erfahrung",
+    title_two: "Ausbildung",
+    title_three: "Programming Skills",
+    title_four: "Andere Skills",
+    title_five: "Sprachen",
+    title_six: "Programme",
+    title_seven: "Deutsch",
+    title_eight: "Englisch (B2)",
+    title_nine: "Französisch (A2)"
+  },
+
+  cloud_text: [
+      "Boxen", "Pop-Kultur", "Kafka", "David Bowie", "Techno", "Punk",
+      "10Km-Lauf", "Fahrrad", "Geschichte", "Claude Debussy", "Blade Runner",
+      "Apocalypse Now", "Danzig"
+  ]
   
 };
 

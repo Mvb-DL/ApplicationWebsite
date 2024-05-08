@@ -1,17 +1,20 @@
 import { FaLink } from "react-icons/fa6";
-import DATA from "../../constant/mockData";
 import Title from "../common/Title";
 import PropTypes from "prop-types";
 import { DiamondLgBlue, DiamondLgGreen, DiamondLgOrange, DiamondLgPink, DiamondLgYellow } from "../../assets/image";
+import { useGlobalState } from "../../components/changeLang/ChangeLang"
 
 const Experience = () => {
+
+  const { data } = useGlobalState();
+
   return (
     <div className="experience-sc resume-block">
       <div className="container">
         <div className="experience-content dotted-border-left">
-          <Title titleText={"Berufliche Erfahrung"} />
+          <Title titleText={data.titles.title_one}  />
           <div className="experience-list grid">
-            {DATA.professionalExperiences.map((item) => (
+            {data.professionalExperiences.map((item) => (
               <ExperienceItem key={item.id} item={item} />
             ))}
           </div>
@@ -60,7 +63,7 @@ const ExperienceItem = ({ item }) => {
         <p className="company-name">{item.company.name}</p>
         <p className="company-info text">{item.company.info}</p>
       </div>
-      <p className="exp-description text">{item.description}</p>
+      <p className="exp-description text" dangerouslySetInnerHTML={{ __html: item.description.replace(/\n/g, '<br>') }}></p>
       <div className="exp-links">
         {item.links?.map((link) => (
           <a key={link.label} href={link.url} target="_blank" className="text-mauve">

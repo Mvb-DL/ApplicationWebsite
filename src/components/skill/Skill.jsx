@@ -1,17 +1,19 @@
-import DATA from "../../constant/mockData";
+import { useGlobalState } from "../../components/changeLang/ChangeLang"
 import Title from "../common/Title";
 import PropTypes from "prop-types";
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 const Skill = () => {
+
+  const { data } = useGlobalState();
 
   return (
     <div className="skill-sc resume-block" >
       <div className="container" >
         <div className="skill-content dotted-border-left">
-          <Title titleText={"Programming Skills"} />
+          <Title titleText={data.titles.title_three}  />
           <div className="skill-list grid">
-            {DATA.skills?.map((item) => (
+            {data.skills?.map((item) => (
               <SkillItem key={item.id} item={item}   
                 />
             ))}
@@ -25,6 +27,7 @@ const Skill = () => {
 export default Skill;
 
 
+
 const SkillItem = ({ item }) => {
 
   const [isHovered, setIsHovered] = useState(false);
@@ -35,59 +38,73 @@ const SkillItem = ({ item }) => {
 
   const getClassname = () => {
     if (item.skill === "python") {
-      return "skill-item text-center gas ar";
+      return "gas ar";
     } else if (item.skill === "js") {
-      return "skill-item text-center gas js";
+      return "gas js";
     } 
     else if (item.skill === "c") {
-      return "skill-item text-center gas c";
+      return "gas c";
     } 
     else if (item.skill === "kotlin") {
-      return "skill-item text-center gas ko";
+      return "gas ko";
     } 
     else if (item.skill === "solidity") {
-      return "skill-item text-center gas so";
+      return "gas so";
     } 
     else if (item.skill === "bash") {
-      return "skill-item text-center gas ba";
+      return "gas ba";
     } 
     else if (item.skill === "php") {
-      return "skill-item text-center gas php";
+      return "gas php";
     } 
     else if (item.skill === "html") {
-      return "skill-item text-center gas html";
+      return "gas html";
     } 
     else {
-      return "skill-item text-center";
+      return "";
     }
   };
 
   return (
 
-      <div className={`${getClassname()} ${isHovered ? 'hovered' : ''}`} key={item.id}
+      <div className={`skill-item text-center ${getClassname()} ${isHovered ? 'hovered' : ''}`} key={item.id}
               onMouseEnter={handleHover}
               onMouseLeave={handleHover}>
 
-      <div className="front">
-        <div className="skill-icon">
-        {isHovered ? "" : <img src={item.icon} alt="icon" />}
-      </div>
-      <div className="skill-info">
-        <h3 className="skill-name">{isHovered ? "" : item.name }</h3>
-        <p className="skill-description text">{isHovered ? "" : item.description }</p>
-      </div>
-      <div>
-        {isHovered ? "" : <span><h3><b>Skill-Level:</b></h3> <h2 className="skill_level">{item.skill_level}</h2></span>}
-      </div>
-      </div>
+      <div className="skill-item-inner">
 
-      <div className="back">
-        <h3>{isHovered ?  item.project_name : ""}</h3>
-        <p>{isHovered ?  item.project_description : ""}</p>
-        {isHovered ?   <a className="project-link" target="_blank" href={item.project_link}><p className="link-p">Zum Code</p></a> : "" }
-      </div> 
+        <div className="front">
+        {isHovered ? "" :
+            <div className="skill-icon">
+             <img src={item.icon} alt="icon" /> 
+            </div> }
+
+            <div className="skill-info">
+                <h3 className="skill-name">{isHovered ? "" : item.name}</h3>
+                <p className="skill-description text">{isHovered ? "" : item.description}</p>
+            </div>
+
+            <div>
+               <span><h3><b>{isHovered ? "" :"Skill-Level:"}</b></h3> <h2 className="skill_level">{isHovered ? "" : item.skill_level}</h2></span>
+            </div>
+
+        </div>
+
+        <div className="back">
+
+            <h3>{isHovered ? item.project_name : ""}</h3>
+            <p>{isHovered ? item.project_description : ""}</p>
+
+            {isHovered ?  <a className="project-link" target="_blank" href={item.project_link}>
+              <p className="link-p">Code</p>
+                </a> : ""
+            }
+             
+        </div> 
+      </div>
 
     </div>
+
   );
 };
 

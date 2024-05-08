@@ -6,7 +6,7 @@ import ViteGltfPlugin from 'vite-plugin-gltf';
 export default defineConfig({
   plugins: [react(),
     ViteGltfPlugin({
-      include: [/\.glb$/],  // Fügen Sie den richtigen Dateityp hinzu, falls erforderlich
+      include: [/\.glb$/],  
     })],
   
 });

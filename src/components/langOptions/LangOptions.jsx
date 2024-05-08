@@ -1,56 +1,36 @@
-import Title from "../common/Title";
-import DATA from "../../constant/mockData";
-import styled from 'styled-components';
-import { RiEnglishInput } from "react-icons/ri";
-
+import { useGlobalState } from "../../components/changeLang/ChangeLang"
+import DATA_EN from '../../constant/mockDataEn'; 
+import DATA from '../../constant/mockData'; 
+import React, { useState } from 'react';
 
 const LangOptions = () => {
 
-    const iconStyle = {
-        position: "fixed",
-        top: "10px",  /* Passen Sie den Wert an, um die gewünschte vertikale Position anzupassen */
-        right: "10px",  /* Passen Sie den Wert an, um die gewünschte horizontale Position anzupassen */
-        display: "flex",
-      };
+  const { updateData } = useGlobalState();
 
-    const stickyText = {
-            position: "fixed",
-            top: "10px", 
-            left: "10px",
-    
+  const [isEnglish, setIsEnglish] = useState(false);
+
+  const handleUpdateData = () => {
+    if (isEnglish) {
+      updateData(DATA);
+    } else {
+      updateData(DATA_EN);
     }
+    setIsEnglish(prevState => !prevState);
+  };
 
-    const StyledText = styled.p`
-  @media (max-width: 1700px) {
-    display: none; // Text will disappear at or below 600px width
-  }
-`;
-
+  
 
   return (
 
-    <div>
+    <div className="lo-sc">
 
     <div className="stickyText">
-      <StyledText> <h1 style={{color: "black", padding: "15px", fontSize: "45px",  position: "fixed",}}>Bewerbung Alexander Hahn</h1></StyledText>
-    </div>
 
-     <div style={iconStyle}>
-
-        <div>
-        <StyledText>  <p style={{color: "black", fontWeight: "600", paddingTop: "5px"}}>Change Language</p> </StyledText>
+        <div className="change_lang">
+           <p onClick={handleUpdateData}>
+           {isEnglish ? 'DEUTSCH' : 'ENGLISH'}</p> 
         </div>
 
-         <div>
-         <span><b>EN</b></span> 
-        </div>
-
-
-        <div>
-          <span><b>DE</b></span>
-        </div>
-       
-        
       </div>
 
     </div>

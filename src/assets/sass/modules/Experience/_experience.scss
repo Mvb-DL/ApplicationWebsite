@@ -26,13 +26,18 @@
     }
 
     .experience-item{
-        padding: 20px 12px;
+        
+        padding: 25px 12px;
         background-color: rgb(32, 34, 38, 0.85);
         border-radius: 8px;
         box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0px;
-	    
     }
 
+    .exp-description {
+        font-size: .85em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 
     .exp-time{
         color: #fff;
@@ -82,5 +87,9 @@
             column-gap: 8px;
             color: #fff;
         }
+    }
+
+    .exp-links a:hover {
+        color: #6225E6;
     }
 }

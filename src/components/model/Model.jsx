@@ -6,7 +6,7 @@ import { useGLTF} from '@react-three/drei';
 const Model = React.forwardRef((props, ref) => {
 
   const { camera } = useThree();
-  const { scene } = useGLTF("src/assets/images/head2.glb");
+  const { scene } = useGLTF("./head2.glb");
   scene.scale.set(2.4, 2.2, 2.2
   );
   scene.position.set(0.6, 2.315, .9)

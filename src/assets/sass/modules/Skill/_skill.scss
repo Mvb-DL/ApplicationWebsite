@@ -1,11 +1,7 @@
 .skill-sc{
 
-    .skill-content{
-    
-
-    }
-    
     .skill-list{
+
         display: grid;
         column-gap: 24px;
         grid-template-columns: repeat(4, 1fr);
@@ -27,63 +23,56 @@
         width: 40px;
         margin: 6px auto 12px auto;
     }
+
     .skill-item{
         padding: 16px 8px;
         background-color: rgb(32, 34, 38, 0.85);
         border-radius: 8px;
         margin: 12px 0;
         cursor: pointer;
-        position: relative;
-        transition: transform 1s;
         width: auto;
         height: 250px;
+        perspective: 500px;
+    }
 
-        &:hover{
-            box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px 2px;
-            transform: rotateY(180deg);
+    .skill-item-inner{
+        transition: transform 1s;
+        transform-style: preserve-3d;
+    }
+
+    .skill-item:hover .skill-item-inner {
+        transform: rotateY( 180deg ) ;
+        transition: transform .5s;
+      }
+
+    .front,
+        .back {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        opacity: 1;
         }
 
-        &:hover .front{
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        &:hover .back{
-            opacity: 1;
-            transition: opacity 1s ease;
-            font-size: .7em;
-        }
-
-        &:hover .back p {
-            transform: rotateY(180deg);
-            transition: opacity 1s ease;
+        .back{
+            transform: rotateY( 180deg );
+            font-size: .9em;
+            justify-content: center;
             align-items: center;
+            padding-top: 10%;
         }
 
-        &:hover .back h3 {
-            transform: rotateY(180deg);
-            transition: opacity 1s ease;
-            align-items: center;
-        }
-
-        &:hover a{
-            transform: rotateY(180deg);
-            transition: opacity 1s ease;
-            align-items: center;
-            
-        }
-
-        &:hover .link-p{
-            padding-top: 5px;
+        .back a{
+            padding-top: 10px;
             text-decoration: underline;
-            font-size: 1.4em;
+            font-weight: 400;
         }
 
         @media(max-width: 992px){
             margin: 10px;
+            padding: 5%;
+            font-size: .8em;
 
         }
-    }
+
 
     .skill-name{
         margin-bottom: 6px;
