@@ -57,8 +57,8 @@ const Biopic = () => {
                     <li id="attr">{data.biopic_text.interest_attr}</li>
                    <br></br>
                    <div className="link-container">
-                        <a target="_blank" href="./public/docs/lebenslauf.pdf">{data.biopic_text.cv}</a>
-                        <a target="_blank" href="./public/docs/noten_mariovonbassen.pdf">{data.biopic_text.notes}</a> 
+                        <a target="_blank" href="./docs/lebenslauf.pdf">{data.biopic_text.cv}</a>
+                        <a target="_blank" href="./docs/noten_mariovonbassen.pdf">{data.biopic_text.notes}</a> 
                     </div>
                    
             </ul> 

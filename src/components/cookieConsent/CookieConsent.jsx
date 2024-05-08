@@ -15,7 +15,7 @@ export default function Cookie_Consent() {
                         expires={150}
                       >
                         Mein Provider erstellt automatisch Server-Logfiles der Besucher.{" "}
-                        <span style={{ fontSize: "10px" }}><a href="./public/docs/datenschutzerklearung.pdf" target='_blank'>Datenschutzerklärung</a></span>
+                        <span style={{ fontSize: "10px" }}><a href="./docs/datenschutzerklearung.pdf" target='_blank'>Datenschutzerklärung</a></span>
         </CookieConsent>
 
     )
