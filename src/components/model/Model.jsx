@@ -3,6 +3,26 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { useGLTF} from '@react-three/drei';
 
 
+// Error boundary component
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div>Leider scheint es so, dass du keine 3D-Modelle in deinem Browser laden kannst :/</div>;
+    }
+
+    return this.props.children;
+  }
+}
+
 const Model = React.forwardRef((props, ref) => {
 
   const { camera } = useThree();
@@ -63,6 +83,7 @@ const GLBViewer = () => {
               <pointLight position={[modelPosition.x + lightPosition.x, modelPosition.y + lightPosition.y, modelPosition.z + lightPosition.z]} intensity={0.6} />
               <Model mouse={mouse}/>
             </Canvas>
+            <ErrorBoundary/>
         </div>
       </div>
     </div>
