@@ -39,7 +39,7 @@ const HomeScreen = () => {
 
         <Helmet>
 
-          <script src="../../../js/three.js" type="text/javascript" defer={true}/>
+          <script src="./js/three.js" type="text/javascript" defer={true}/>
 
         </Helmet>
     
