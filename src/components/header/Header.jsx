@@ -85,9 +85,8 @@ const Header = () => {
                 </li>
 
                 <li className="social-item">
-                    <a className="website-code" target="_blank" href="https://github.com/Mvb-DL/Mvb-DL.github.io">Website-Code</a>
+                    <a className="website-code" target="_blank" href="https://github.com/Mvb-DL/ApplicationWebsite/tree/main">Website-Code</a>
                 </li>
-
             </ul>
 
           </div>
