@@ -2,26 +2,40 @@ import React, { useRef, useState  } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { useGLTF} from '@react-three/drei';
 
+function isWebGLAvailable() {
+  try {
+      var canvas = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (
+          canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+  } catch (e) {
+      return false;
+  }
+}
 
-// Error boundary component
+if (!isWebGLAvailable()) {
+  return <div>Es scheint, dass du mit deinem Browser leider keine 3D Modelle laden kannst :/</div>;
+}
+
 class ErrorBoundary extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { hasError: false };
+      super(props);
+      this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true };
+      return { hasError: true };
   }
 
   render() {
-    if (this.state.hasError) {
-      return <div>Leider scheint es so, dass du keine 3D-Modelle in deinem Browser laden kannst :/</div>;
-    }
-
-    return this.props.children;
+      if (this.state.hasError) {
+          return <div>Leider kannst du mit deinem Browser keine 3D Modelle laden,
+            daher ist die Experience auf dieser Seite low :/
+          </div>;
+      }
+      return this.props.children;
   }
 }
+
 
 const Model = React.forwardRef((props, ref) => {
 
@@ -81,9 +95,11 @@ const GLBViewer = () => {
           
             <Canvas onMouseMove={handleMouseMove}>
               <pointLight position={[modelPosition.x + lightPosition.x, modelPosition.y + lightPosition.y, modelPosition.z + lightPosition.z]} intensity={0.6} />
-              <Model mouse={mouse}/>
+              <ErrorBoundary>
+                <Model mouse={mouse}/>
+              </ErrorBoundary>
             </Canvas>
-            <ErrorBoundary/>
+
         </div>
       </div>
     </div>
