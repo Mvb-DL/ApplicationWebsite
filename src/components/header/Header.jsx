@@ -72,14 +72,14 @@ const Header = () => {
 
                 <li className="social-item">
                     <a href="https://www.linkedin.com/in/mario-von-bassen-3797831ba/" target="_blank">
-                        <img src={Linkedin} />
+                        <img src={Linkedin} alt="LinkedIn Icon"/>
                         <span className="tooltip text">Linkedin</span>
                     </a>
                 </li>
 
                 <li className="social-item">
                     <a href="https://github.com/Mvb-DL" target="_blank">
-                        <img src={Github} />
+                        <img src={Github} alt="GitHub Icon"/>
                         <span className="tooltip text">Github</span>
                     </a>
                 </li>

@@ -42,7 +42,7 @@ const Biopic = () => {
                         {data.biopic_text.header_name}
                     </h2>
 
-                    <img src={Mario} alt="avatar" className="me" /> 
+                    <img src={Mario} alt="Mario" className="me" /> 
 
                     <p className="pic-text">{data.biopic_text.pic_text}</p>
 
