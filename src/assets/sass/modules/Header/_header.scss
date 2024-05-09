@@ -165,6 +165,8 @@
             }
             img{
                 transition: $transition-default;
+                width: auto;
+                height: 100%;
                 &:hover{
                     scale: 1.1;
                 }
