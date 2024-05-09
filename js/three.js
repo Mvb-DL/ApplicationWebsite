@@ -142,7 +142,7 @@ class CannonHelper {
 
 
           THREE.ImageUtils.crossOrigin = '';
-          var floorMap = THREE.ImageUtils.loadTexture("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMaznkwKbnlWTf0zzL9uQrUQ2Q54MfyI7JC5m62icHR5oRjT1v");
+          var floorMap = THREE.ImageUtils.loadTexture("./texture.jpeg");
           floorMap.wrapS = floorMap.wrapT = THREE.RepeatWrapping;
           floorMap.repeat.set(25, 25);
           var groundMaterial = new THREE.MeshPhongMaterial({
