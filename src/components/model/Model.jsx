@@ -2,19 +2,7 @@ import React, { useRef, useState  } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { useGLTF} from '@react-three/drei';
 
-function isWebGLAvailable() {
-  try {
-      var canvas = document.createElement('canvas');
-      return !!(window.WebGLRenderingContext && (
-          canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-  } catch (e) {
-      return false;
-  }
-}
 
-if (!isWebGLAvailable()) {
-  return <div>Es scheint, dass du mit deinem Browser leider keine 3D Modelle laden kannst :/</div>;
-}
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -87,6 +75,20 @@ const GLBViewer = () => {
 
   const modelPosition = { x: 0.5, y: 2.2, z: 0.9 };
   const lightPosition = { x: -.05, y: .75, z: .4 };
+
+  function isWebGLAvailable() {
+    try {
+        var canvas = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (
+            canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+    } catch (e) {
+        return false;
+    }
+  }
+  
+  if (!isWebGLAvailable()) {
+    return <div>Es scheint, dass du mit deinem Browser leider keine 3D Modelle laden kannst :/</div>;
+  }
 
   return (
     <div className="resume-block model-container-sc">
