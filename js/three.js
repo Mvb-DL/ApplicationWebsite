@@ -821,6 +821,8 @@ loader2.load('./font/Hack_Bold.json', function(font) {
 });
 
 //===================================================== add sky particles
+
+/*
 var textureLoader = new THREE.TextureLoader();
 textureLoader.crossOrigin = ''; //allow cross origin loading
 
@@ -855,7 +857,7 @@ sparks.geometry.vertices.map((d, i) => {
   d.x = randnum(-500, 500);
   d.z = randnum(-500, 500);
 });
-
+*/
 
 //===================================================== Joystick
 class JoyStick {
