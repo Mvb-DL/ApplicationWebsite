@@ -346,7 +346,7 @@ class CannonHelper {
 //===================================================== scene
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera(700, window.innerWidth / window.innerHeight, .01, 1000);
+var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 1000);
 camera.position.set(3, 1.4, -3);
 camera.lookAt(scene.position);
 
