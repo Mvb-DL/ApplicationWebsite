@@ -359,9 +359,27 @@ renderer = new THREE.WebGLRenderer({
 renderer.setSize(container.offsetWidth, container.offsetHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMapSoft = true; // Shadow
-renderer.shadowMapType = THREE.PCFShadowMap; //Shadow
+renderer.shadowMap.type = THREE.PCFSoftShadowMap; ; //Shadow
 
 document.getElementById('info').appendChild(renderer.domElement);
+
+
+renderer.domElement.addEventListener('webglcontextlost', onContextLost, false);
+renderer.domElement.addEventListener('webglcontextrestored', onContextRestored, false);
+
+function onContextLost(event) {
+
+  event.preventDefault();
+  console.error('WebGL context lost. You might need to handle this situation by recreating WebGL resources.');
+  // Optionally, you might want to clean up resources here
+}
+
+function onContextRestored(event) {
+  
+  console.log('WebGL context restored. Re-rendering shadows...');
+  // Re-render shadows or perform any other necessary actions
+  // It might be helpful to have a function to reinitialize your scene's state
+}
 
 //===================================================== cannon
 var debug = true;
@@ -499,7 +517,7 @@ Object.defineProperties(THREE.Object3D.prototype, {
 //===================================================== model
 var geometry = new THREE.BoxBufferGeometry(.5, 1, .5);
 /* We change the pivot point to be at the bottom of the cube, instead of its center. So we translate the whole geometry. */
-geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
+geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
 var material = new THREE.MeshNormalMaterial({
   transparent: true,
   opacity: 0
@@ -694,7 +712,7 @@ Promise.all([
 //=========================================================================================== flag
 var geometry = new THREE.BoxBufferGeometry(0.35, 2, 0.15);
 /* We change the pivot point to be at the bottom of the cube, instead of its center. So we translate the whole geometry. */
-geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 1, 0));
+geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, 1, 0));
 var material = new THREE.MeshNormalMaterial({
   transparent: true,
   opacity: 0
