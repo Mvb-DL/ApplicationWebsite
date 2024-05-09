@@ -140,7 +140,7 @@ class CannonHelper {
           mesh = new THREE.Object3D();
           const submesh = new THREE.Object3D();
 
-          /*
+
           THREE.ImageUtils.crossOrigin = '';
           var floorMap = THREE.ImageUtils.loadTexture("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMaznkwKbnlWTf0zzL9uQrUQ2Q54MfyI7JC5m62icHR5oRjT1v");
           floorMap.wrapS = floorMap.wrapT = THREE.RepeatWrapping;
@@ -150,7 +150,7 @@ class CannonHelper {
             specular: new THREE.Color('black'),
             shininess: 0,
             bumpMap: floorMap
-          });*/
+          });
 
 
           const ground = new THREE.Mesh(geometry, groundMaterial);
@@ -822,7 +822,7 @@ loader2.load('./font/Hack_Bold.json', function(font) {
 
 //===================================================== add sky particles
 
-
+/*
 var textureLoader = new THREE.TextureLoader();
 textureLoader.crossOrigin = ''; //allow cross origin loading
 
@@ -857,7 +857,7 @@ sparks.geometry.vertices.map((d, i) => {
   d.x = randnum(-500, 500);
   d.z = randnum(-500, 500);
 });
-
+*/
 
 //===================================================== Joystick
 class JoyStick {
