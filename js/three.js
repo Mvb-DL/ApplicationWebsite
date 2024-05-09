@@ -353,7 +353,7 @@ camera.lookAt(scene.position);
 const container = document.getElementById('info');
 
 renderer = new THREE.WebGLRenderer({
-  antialias: true,
+  antialias: false,
   alpha: true
 });
 renderer.setSize(container.offsetWidth, container.offsetHeight);
