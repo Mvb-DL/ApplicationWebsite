@@ -537,7 +537,7 @@ var clip2;
 var clip3;
 
 var loader = new THREE.GLTFLoader();
-loader.load('https://raw.githubusercontent.com/baronwatts/models/master/astronaut.glb', function(object) {
+loader.load('../astronaut.glb', function(object) {
   object.scene.traverse(function(node) {
     if (node instanceof THREE.Mesh) {
       node.castShadow = true;
