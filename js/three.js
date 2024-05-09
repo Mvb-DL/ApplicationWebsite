@@ -353,11 +353,11 @@ camera.lookAt(scene.position);
 const container = document.getElementById('info');
 
 renderer = new THREE.WebGLRenderer({
-  antialias: false,
+  antialias: true,
   alpha: true
 });
 renderer.setSize(container.offsetWidth, container.offsetHeight);
-renderer.shadowMap.enabled = true;
+renderer.shadowMap.enabled = false;
 renderer.shadowMapSoft = true; // Shadow
 renderer.shadowMap.type = THREE.PCFSoftShadowMap; ; //Shadow
 
