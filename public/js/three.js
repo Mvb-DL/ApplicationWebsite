@@ -346,7 +346,7 @@ class CannonHelper {
 //===================================================== scene
 var scene = new THREE.Scene();
 
-var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 100000);
+var camera = new THREE.PerspectiveCamera(700, window.innerWidth / window.innerHeight, .01, 1000);
 camera.position.set(3, 1.4, -3);
 camera.lookAt(scene.position);
 
@@ -371,14 +371,11 @@ function onContextLost(event) {
 
   event.preventDefault();
   console.error('WebGL context lost. You might need to handle this situation by recreating WebGL resources.');
-  // Optionally, you might want to clean up resources here
 }
 
 function onContextRestored(event) {
-  
+
   console.log('WebGL context restored. Re-rendering shadows...');
-  // Re-render shadows or perform any other necessary actions
-  // It might be helpful to have a function to reinitialize your scene's state
 }
 
 //===================================================== cannon
