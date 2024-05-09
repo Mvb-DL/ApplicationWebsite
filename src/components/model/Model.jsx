@@ -3,7 +3,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { useGLTF} from '@react-three/drei';
 
 
-{/*
+
 class ErrorBoundary extends React.Component {
   constructor(props) {
       super(props);
@@ -23,7 +23,7 @@ class ErrorBoundary extends React.Component {
       return this.props.children;
   }
 }
-*/}
+
 
 const Model = React.forwardRef((props, ref) => {
 
@@ -76,7 +76,6 @@ const GLBViewer = () => {
   const modelPosition = { x: 0.5, y: 2.2, z: 0.9 };
   const lightPosition = { x: -.05, y: .75, z: .4 };
 
-  /*
   function isWebGLAvailable() {
     try {
         var canvas = document.createElement('canvas');
@@ -89,7 +88,7 @@ const GLBViewer = () => {
   
   if (!isWebGLAvailable()) {
     return <div>Es scheint, dass du mit deinem Browser leider keine 3D Modelle laden kannst :/</div>;
-  }*/
+  }
 
   return (
     <div className="resume-block model-container-sc">
@@ -98,7 +97,9 @@ const GLBViewer = () => {
           
             <Canvas onMouseMove={handleMouseMove}>
               <pointLight position={[modelPosition.x + lightPosition.x, modelPosition.y + lightPosition.y, modelPosition.z + lightPosition.z]} intensity={0.6} />
+              <ErrorBoundary>
                 <Model mouse={mouse}/>
+              </ErrorBoundary>
             </Canvas>
 
         </div>
