@@ -359,7 +359,7 @@ renderer = new THREE.WebGLRenderer({
 renderer.setSize(container.offsetWidth, container.offsetHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMapSoft = true; // Shadow
-renderer.shadowMap.type = THREE.PCFShadowMap; //Shadow
+renderer.shadowMapType = THREE.PCFShadowMap; //Shadow
 
 document.getElementById('info').appendChild(renderer.domElement);
 
@@ -499,7 +499,7 @@ Object.defineProperties(THREE.Object3D.prototype, {
 //===================================================== model
 var geometry = new THREE.BoxBufferGeometry(.5, 1, .5);
 /* We change the pivot point to be at the bottom of the cube, instead of its center. So we translate the whole geometry. */
-geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
+geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 0.5, 0));
 var material = new THREE.MeshNormalMaterial({
   transparent: true,
   opacity: 0
@@ -694,7 +694,7 @@ Promise.all([
 //=========================================================================================== flag
 var geometry = new THREE.BoxBufferGeometry(0.35, 2, 0.15);
 /* We change the pivot point to be at the bottom of the cube, instead of its center. So we translate the whole geometry. */
-geometry.applyMatrix4(new THREE.Matrix4().makeTranslation(0, 1, 0));
+geometry.applyMatrix(new THREE.Matrix4().makeTranslation(0, 1, 0));
 var material = new THREE.MeshNormalMaterial({
   transparent: true,
   opacity: 0
