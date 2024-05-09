@@ -30,7 +30,7 @@ const DATA = {
 
   headerText: [
     {
-      header_text: "Am 1.Oktober 2024 beginne ich meinen Master in Informatik an der Uni Wien. Daher suche ich einen Job und das ist meine selbst programmierte Bewerbung hierfür. ",
+      header_text: "Am 1.Oktober 2024 beginne ich meinen Master in Informatik an der Uni Wien. Dafür suche ich einen Job und das ist meine selbst programmierte Bewerbung. ",
     }
   ],
 
