@@ -566,7 +566,7 @@ loader.load('./astronaut.glb', function(object) {
 var sizeX = 64,
   sizeY = 64,
   minHeight = 0,
-  maxHeight = 30;
+  maxHeight = 40;
 var startPosition = new CANNON.Vec3(0, maxHeight - 3, sizeY * 0.5 - 10);
 var img2matrix = function() {
 
