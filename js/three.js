@@ -140,7 +140,7 @@ class CannonHelper {
           mesh = new THREE.Object3D();
           const submesh = new THREE.Object3D();
 
-
+/*
           THREE.ImageUtils.crossOrigin = '';
           var floorMap = THREE.ImageUtils.loadTexture("./texture.jpeg");
           floorMap.wrapS = floorMap.wrapT = THREE.RepeatWrapping;
@@ -150,7 +150,7 @@ class CannonHelper {
             specular: new THREE.Color('black'),
             shininess: 0,
             bumpMap: floorMap
-          });
+          }); */
 
 
           const ground = new THREE.Mesh(geometry, groundMaterial);
@@ -386,9 +386,7 @@ var fixedTimeStep = 1.0 / 60.0;
 var helper = new CannonHelper(scene);
 var physics = {};
 
-
 const world = new CANNON.World();
-
 
 world.broadphase = new CANNON.SAPBroadphase(world);
 world.gravity.set(0, -10, 0);
@@ -565,8 +563,8 @@ loader.load('./astronaut.glb', function(object) {
 
 
 //===================================================== add Terrain
-var sizeX = 128,
-  sizeY = 128,
+var sizeX = 64,
+  sizeY = 64,
   minHeight = 0,
   maxHeight = 60;
 var startPosition = new CANNON.Vec3(0, maxHeight - 3, sizeY * 0.5 - 10);
