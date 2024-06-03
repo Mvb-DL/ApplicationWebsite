@@ -35,7 +35,7 @@ const HomeScreen = () => {
 
         <OtherSkills />
 
-    </GlobalStateProvider>
+      </GlobalStateProvider>
 
         <Helmet>
 

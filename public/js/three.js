@@ -347,7 +347,7 @@ class CannonHelper {
 var scene = new THREE.Scene();
 
 var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, .01, 1000);
-camera.position.set(3, 1.4, -3);
+camera.position.set(3, .9, -3);
 camera.lookAt(scene.position);
 
 const container = document.getElementById('info');
@@ -797,15 +797,32 @@ loader2.load('./font/Hack_Bold.json', function(font) {
   textMesh2.rotation.y = 700;
   scene.add(textMesh2);
 
-  textMesh2.addEventListener('click', function() {
-    // Call your function here
-    yourFunction();
-  });
+   // Set up raycaster and mouse vector
+   const raycaster = new THREE.Raycaster();
+   const mouse = new THREE.Vector2();
 
-  function yourFunction() {
-    // Your function logic here
-    console.log("Text Mesh Clicked!");
-  }
+   // Add event listener for mouse click
+   function onMouseClick(event) {
+       // Calculate mouse position in normalized device coordinates (-1 to +1)
+       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+       // Update the raycaster with the camera and mouse position
+       raycaster.setFromCamera(mouse, camera);
+
+       // Calculate objects intersecting the ray
+       const intersects = raycaster.intersectObject(textMesh2);
+
+       // Check if the text was clicked
+       if (intersects.length > 0) {
+           // Trigger the pop-up
+           document.getElementById('popup-pillap').style.display = 'block';
+       }
+   }
+
+   window.addEventListener('click', onMouseClick, false);
+
+
 
   const geometry_text_three = new THREE.TextGeometry('GITHUB', {
     font: font,
