@@ -18,6 +18,8 @@ const HomeScreen = () => {
 
     <GlobalStateProvider>
 
+        <BackgroundEffect />
+
         <CookieConsent></CookieConsent>
 
         <LangOptions></LangOptions>
@@ -25,8 +27,6 @@ const HomeScreen = () => {
         <Header/>
 
         <Biopic ></Biopic>
-
-        <BackgroundEffect />
 
         <Experience />
         <Education />

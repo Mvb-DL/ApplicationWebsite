@@ -1,12 +1,13 @@
 import Title from "../common/Title";
 import React, { useState } from 'react';
 import { useGlobalState } from "../../components/changeLang/ChangeLang"
-
+	{/*
 const LifeLine = () => {
 
     const { data } = useGlobalState();
 
   return (
+
     <div className="skill-sc resume-block" >
       <div className="container" >
 
@@ -101,4 +102,4 @@ const LifeLine = () => {
   );
 };
 
-export default LifeLine;
+export default LifeLine; */}
