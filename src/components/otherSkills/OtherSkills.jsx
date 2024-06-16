@@ -5,6 +5,7 @@ import { useGlobalState } from "../../components/changeLang/ChangeLang";
 const OtherSkills = () => {
   
   const { data } = useGlobalState();
+  
     return (
       
       <div className="other-skills-sc resume-block">

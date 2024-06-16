@@ -1,106 +1,67 @@
 import Title from "../common/Title";
 import React, { useState } from 'react';
-import { useGlobalState } from "../../components/changeLang/ChangeLang"
+import { useGlobalState } from "../changeLang/ChangeLang"
 
-	{/*
 const LifeLine = () => {
 
     const { data } = useGlobalState();
 
   return (
 
-    <div className="skill-sc resume-block" >
-      <div className="container" >
+	<div className="lifeline-sc resume-block">
 
-      <Title titleText={data.titles.title_three}  />
+	<div className="container">
 
-      <section id="cd-timeline" class="cd-container">
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
+	  <div className="dotted-border-left">
+
+		<Title titleText={data.titles.title_eleven}/>
+
+		<div className="lifeline-item">
+
+			<div class="flex-parent line">
+				<div class="input-flex-container">
+					<div class="input">
+						<span data-year="2013" data-info={data.lifeline.monte}></span>
+					</div>
+					<div class="input">
+						<span data-year="2013" data-info={data.lifeline.waldorf}></span>
+					</div>
+					<div class="input">
+						<span data-year="2019" data-info={data.lifeline.abitur}></span>
+					</div>
+					<div class="input">
+						<span data-year="2019-2020" data-info={data.lifeline.uni}></span>
+					</div>
+					<div class="input">
+						<span data-year="2020-2024" data-info={data.lifeline.e_com}></span>
+					</div>
+					<div class="input">
+						<span data-year="2023" data-info={data.lifeline.danzig}></span>
+					</div>
+					<div class="input">
+						<span data-year="2023" data-info={data.lifeline.pillap}></span>
+					</div>
+					<div class="input">
+						<span data-year="2023" data-info={data.lifeline.full}></span>
+					</div>
+					<div class="input">
+						<span data-year="2023" data-info={data.lifeline.erasmus}></span>
+					</div>
+					
+					<div class="input">
+						<span data-year={data.lifeline.now} data-info={data.lifeline.future}></span>
+					</div>
+				</div>
 			</div>
 
-			<div class="cd-timeline-content">
-				<h2>Penta Consulting</h2>
-        <div class="timeline-content-info">
-          <span class="timeline-content-info-title">
-            <i class="fa fa-certificate" aria-hidden="true"></i>
-            Front End Developer
-          </span>
-          <span class="timeline-content-info-date">
-            <i class="fa fa-calendar-o" aria-hidden="true"></i>
-            June 2016 - Present
-          </span>
-        </div>
-				<p>Working alongside the designer team implementing the designs, also developing custom solutions to address team necessities.</p>
-        <ul class="content-skills">
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>Wordpress</li>
-        </ul>
-			</div> 
-		</div> 
+		</div>
+	   
+	  </div>
 
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-			</div> 
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 2</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-				<span class="cd-date">Jan 18</span>
-			</div>
-		</div> 
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-picture">
-			</div> 
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 3</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
-				<span class="cd-date">Jan 24</span>
-			</div> 
-		</div> 
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-			</div> 
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 4</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
-				<span class="cd-date">Feb 14</span>
-			</div> 
-		</div> 
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-location">
-			</div> 
-
-			<div class="cd-timeline-content">
-				<h2>Title of section 5</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
-				<span class="cd-date">Feb 18</span>
-			</div> 
-		</div> 
-
-		<div class="cd-timeline-block">
-			<div class="cd-timeline-img cd-movie">
-			</div> 
-
-			<div class="cd-timeline-content">
-				<h2>Final Section</h2>
-				<p>This is the content of the last section</p>
-				<span class="cd-date">Feb 26</span>
-			</div> 
-		</div> 
-	</section> 
-        
-      </div>
-    </div>
+	</div>
+  </div>
+    
   );
 };
 
-export default LifeLine; */}
+export default LifeLine;

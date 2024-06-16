@@ -326,7 +326,8 @@ const DATA = {
     title_seven: "Deutsch",
     title_eight: "Englisch (B2)",
     title_nine: "Französisch (A2)",
-    title_ten: "Projekte"
+    title_ten: "Projekte",
+    title_eleven: "Lebenslauf"
   },
 
   cloud_text: [
@@ -369,7 +370,21 @@ const DATA = {
         bike_pic_three: BikeThree,
         sdw: "Während der Coronazeit haben wir beschlossen einen Verein zu gründen, damit wir für unsere Mitstudierenden ein Netzwerk aufbauen können, um Ideen und nachhaltige unternehmerische Lösungen in der Region Würzburg aufbauen zu können. Aus diesem Projekt habe ich mich leider durch andere Verpflichtungen im Sommer 2023 zurückziehen müssen."
       }
-    ]
+    ],
+
+    lifeline: {
+      monte: "Montessori-Schule Würzburg",
+      waldorf: "Waldorfschule Würzburg",
+      abitur : "Abitur",
+      uni: "Uni-Würzburg Rechtswissenschaft",
+      e_com: "E-Commerce THWS",
+      danzig: "Auslandspraktikum CGI Inc. Danzig",
+      pillap: "Pillap",
+      full: "Fullstack Developer",
+      erasmus: "Erasmus Lille/Kotrijk",
+      future: "Ihr Unternehmen?",
+      now: "Jetzt"
+    }
 
   
 };

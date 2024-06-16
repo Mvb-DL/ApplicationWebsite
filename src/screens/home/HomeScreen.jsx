@@ -8,6 +8,7 @@ import CookieConsent from "../../components/cookieConsent/CookieConsent"
 import OtherSkills from "../../components/otherSkills/OtherSkills"
 import Biopic from "../../components/Biopic/Biopic"
 import Projects from "../../components/projects/Projects"
+import LifeLine from "../../components/lifeLine/LifeLine"
 import {Helmet} from "react-helmet";
 import { GlobalStateProvider } from "../../components/changeLang/ChangeLang"
 
@@ -37,6 +38,8 @@ const HomeScreen = () => {
         <OtherSkills />
 
         <Projects />
+
+        <LifeLine />
 
       </GlobalStateProvider>
 
