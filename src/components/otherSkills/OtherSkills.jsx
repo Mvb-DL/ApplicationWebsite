@@ -6,6 +6,7 @@ const OtherSkills = () => {
   
   const { data } = useGlobalState();
     return (
+      
       <div className="other-skills-sc resume-block">
 
         <div className="container">

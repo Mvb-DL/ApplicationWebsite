@@ -1,30 +1,38 @@
 import {
-    DiamondLgBlue,
-    DiamondLgGreen,
-    DiamondLgOrange,
-    DiamondLgPink,
-    DiamondLgYellow,
-    SkillHtml5,
-    SkillPhotoshop,
-    SkillXd,
-    CGI,
-    SkillPowerpoint,
-    THWS,
-    SkillPython,
-    SkillJS,
-    SkillCplus,
-    SkillKotlin,
-    SkillSolidity,
-    SkillBash,
-    SkillPhp,
-    SkillBlender,
-    SkillDesign,
-    Ableton,
-    Word,
-    Waldorf,
-    UniWien
-  
-  } from "../assets/image";
+  DiamondLgBlue,
+  DiamondLgGreen,
+  DiamondLgOrange,
+  DiamondLgPink,
+  DiamondLgYellow,
+  SkillHtml5,
+  SkillPhotoshop,
+  SkillXd,
+  CGI,
+  SkillPowerpoint,
+  THWS,
+  SkillPython,
+  SkillJS,
+  SkillCplus,
+  SkillKotlin,
+  SkillSolidity,
+  SkillBash,
+  SkillPhp,
+  SkillBlender,
+  SkillDesign,
+  Ableton,
+  Word,
+  Waldorf,
+  UniWien,
+  Pillap_one,
+  Pillap_two,
+  Pillap_three,
+  MetaMerce,
+  MunichPieces,
+  BikeOne,
+  BikeTwo,
+  BikeThree
+
+} from "../assets/image";
   
   const DATA_EN = {
   
@@ -323,7 +331,44 @@ import {
       cloud_text: [
         "Boxing", "Pop culture", "Kafka", "David Bowie", "Techno", "Punk",
         "10K-Run", "Bike", "History", "Claude Debussy"
+    ],
+
+    projects: [
+
+      { 
+        id: 1,
+        name: "Pillap",
+        short_desc: "Start-up for sustainable laptop bags in the textile sector mobile working",
+        desc: "Pillap (Pillow + Laptop) is an award-winning start-up (Kickstarter, Startbahn27), which I founded with two other team members. Our product is a sustainable, innovative laptop bag that can be used as a pillow, for example, and can also be adapted to the customer's individual needs using a patented modular system.",
+        next_desc: "Find out more about the project via the following links on LinkedIn",
+        pic_one: Pillap_one,
+        pic_two: Pillap_two,
+        pic_three: Pillap_three,
+        link_one : "https://www.linkedin.com/posts/werkraum-thws_thws-startupslabfh-fwi-activity-7075491659559399424-A0b2",
+        link_two: "https://www.linkedin.com/posts/nico-hildmann_flight-startbahn27-schweinfurt-activity-7197124841701785600-ovEx",
+        link_one_text: "Kickstarter",
+        link_two_text: "Startbahn27"
+      },
+
+    ],
+
+
+    projects_two: [
+      {
+        id: 1,
+        github: "GitHub",
+        github_desc: "You can find all my programming projects on GitHub",
+        github_pic_one: MetaMerce,
+        github_pic_two: MunichPieces,
+        bike: "Cycling through Europe",
+        bike_desc: "Every summer, another country in Europe is explored by bike. This year from Rome to Palermo. Countries visited: Switzerland, France, Italy, Spain, Austria, Luxembourg, Belgium, Netherlands, Liechtenstein (but nothing like Italy!)",
+        bike_pic_one: BikeOne,
+        bike_pic_two: BikeTwo,
+        bike_pic_three: BikeThree,
+        sdw: "During the Corona period, we decided to found an association so that we could build a network for our fellow students to develop ideas and sustainable entrepreneurial solutions in the Würzburg region. Unfortunately, I had to withdraw from this project in summer 2023 due to other commitments."
+      }
     ]
+
   
   
     

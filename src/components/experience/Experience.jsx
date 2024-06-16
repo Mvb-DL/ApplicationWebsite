@@ -27,6 +27,7 @@ const Experience = () => {
 export default Experience;
 
 const ExperienceItem = ({ item }) => {
+  
   const showDiamondImage = (color) => {
     if (color === "Blue") {
       return DiamondLgBlue;

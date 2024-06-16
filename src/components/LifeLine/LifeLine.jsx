@@ -1,6 +1,7 @@
 import Title from "../common/Title";
 import React, { useState } from 'react';
 import { useGlobalState } from "../../components/changeLang/ChangeLang"
+
 	{/*
 const LifeLine = () => {
 

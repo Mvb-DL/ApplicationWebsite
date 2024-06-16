@@ -22,7 +22,15 @@ import {
   Ableton,
   Word,
   Waldorf,
-  UniWien
+  UniWien,
+  Pillap_one,
+  Pillap_two,
+  Pillap_three,
+  MetaMerce,
+  MunichPieces,
+  BikeOne,
+  BikeTwo,
+  BikeThree
 
 } from "../assets/image";
 
@@ -317,14 +325,52 @@ const DATA = {
     title_six: "Programme",
     title_seven: "Deutsch",
     title_eight: "Englisch (B2)",
-    title_nine: "Französisch (A2)"
+    title_nine: "Französisch (A2)",
+    title_ten: "Projekte"
   },
 
   cloud_text: [
       "Boxen", "Pop-Kultur", "Kafka", "David Bowie", "Techno", "Punk",
       "10Km-Lauf", "Fahrrad", "Geschichte", "Claude Debussy", "Blade Runner",
       "Apocalypse Now", "Danzig"
-  ]
+  ],
+
+  projects: [
+
+      { 
+        id: 1,
+        name: "Pillap",
+        short_desc: "Start-Up für nachhaltige Laptoptaschen im Textilbereich mobiles Arbeiten",
+        desc: "Pillap (Pillow + Laptop) ist ein preisausgezeichnetes Start-Up (Kickstarter, Startbahn27), welches ich mit zwei weiteren Team-Mitgliedern gegründet habe. Unser Produkt ist eine nachhaltige leasbare innovative Laptoptasche, welche z.B. als Kissen verwendet und darüber hinaus durch ein patentiertes Baukastensystem an die individuellen Bedürfnisse der Kunden angepasst werden kann.",
+        next_desc: "Mehr dazu über das Projekt über folgende Links auf LinkedIn",
+        pic_one: Pillap_one,
+        pic_two: Pillap_two,
+        pic_three: Pillap_three,
+        link_one : "https://www.linkedin.com/posts/werkraum-thws_thws-startupslabfh-fwi-activity-7075491659559399424-A0b2",
+        link_two: "https://www.linkedin.com/posts/nico-hildmann_flight-startbahn27-schweinfurt-activity-7197124841701785600-ovEx",
+        link_one_text: "Kickstarter",
+        link_two_text: "Startbahn27"
+      },
+
+    ],
+
+
+    projects_two: [
+      {
+        id: 1,
+        github: "GitHub",
+        github_desc: "Alle meine Programmier-Projekte findet man auf GitHub",
+        github_pic_one: MetaMerce,
+        github_pic_two: MunichPieces,
+        bike: "Mit dem Fahrrad duch Europa",
+        bike_desc: "Jeden Sommer wird mit dem Fahrrad ein weiteres Land in Europa erkundet. Dieses Jahr von Rom nach Palermo. Besuchte Länder: Schweiz, Frankreich, Italien, Spanien, Österreich, Luxemburg, Belgien, Niederlande, Lichtenstein (doch nichts ist so wie Italien!)",
+        bike_pic_one: BikeOne,
+        bike_pic_two: BikeTwo,
+        bike_pic_three: BikeThree,
+        sdw: "Während der Coronazeit haben wir beschlossen einen Verein zu gründen, damit wir für unsere Mitstudierenden ein Netzwerk aufbauen können, um Ideen und nachhaltige unternehmerische Lösungen in der Region Würzburg aufbauen zu können. Aus diesem Projekt habe ich mich leider durch andere Verpflichtungen im Sommer 2023 zurückziehen müssen."
+      }
+    ]
+
   
 };
 

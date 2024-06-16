@@ -34,12 +34,25 @@ import Ableton from "./images/ableton.svg"
 import CGI from "./images/cgi.svg"
 import Word from "./images/word.svg"
 import Waldorf from "./images/waldorf.svg"
-import UniWien from "./images/uni_wien.svg"
+import UniWien from "./images/uni_wien.svg";
+import Pillap_one from "./images/pillap_one.png";
+import Pillap_two from "./images/pillap_two.png";
+import Pillap_three from "./images/pillap_three.png";
+import MetaMerce from "./images/metamerce.png";
+import MunichPieces from "./images/munich_pieces.png";
+import BikeOne from "./images/bike_one.jpg";
+import BikeTwo from "./images/bike_two.jpg";
+import BikeThree from "./images/bike_three.png";
 
 export {
   SkillDesign,
   Word,
+  MetaMerce,
+  MunichPieces,
   CGI,
+  BikeOne,
+  BikeTwo,
+  BikeThree,
   Github,
   Waldorf,
   Ableton,
@@ -73,4 +86,7 @@ export {
   SkillPhotoshop,
   SkillPowerpoint,
   SkillXd,
+  Pillap_one,
+  Pillap_two,
+  Pillap_three
 };
