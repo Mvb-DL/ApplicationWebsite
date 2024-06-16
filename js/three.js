@@ -797,30 +797,11 @@ loader2.load('./font/Hack_Bold.json', function(font) {
   textMesh2.rotation.y = 700;
   scene.add(textMesh2);
 
-   // Set up raycaster and mouse vector
+
    const raycaster = new THREE.Raycaster();
    const mouse = new THREE.Vector2();
 
-   // Add event listener for mouse click
-   function onMouseClick(event) {
-       // Calculate mouse position in normalized device coordinates (-1 to +1)
-       mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-       mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-       // Update the raycaster with the camera and mouse position
-       raycaster.setFromCamera(mouse, camera);
-
-       // Calculate objects intersecting the ray
-       const intersects = raycaster.intersectObject(textMesh2);
-
-       // Check if the text was clicked
-       if (intersects.length > 0) {
-           // Trigger the pop-up
-           document.getElementById('popup-pillap').style.display = 'block';
-       }
-   }
-
-   window.addEventListener('click', onMouseClick, false);
 
 
 
@@ -842,6 +823,29 @@ loader2.load('./font/Hack_Bold.json', function(font) {
   textMesh3.position.z = 90;
   textMesh3.rotation.y = 800;
   scene.add(textMesh3);
+
+
+  function onMouseClick(event) {
+
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    raycaster.setFromCamera(mouse, camera);
+
+    const intersects = raycaster.intersectObject(textMesh2);
+    const intersectsMesh3 = raycaster.intersectObject(textMesh3);
+
+    if (intersects.length > 0) {
+
+        document.getElementById('popup-pillap').style.display = 'block';
+    }
+
+    if (intersectsMesh3.length > 0){
+      document.getElementById('popup-github').style.display = 'block';
+    }
+}
+
+window.addEventListener('click', onMouseClick, false);
 
   const spotLight = new THREE.DirectionalLight(0x6225e6, .1);
   spotLight.position.set(-80, 50, 50);
