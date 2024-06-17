@@ -38,7 +38,7 @@ import {
   
     headerText: [
       {
-        header_text: "On October 1, 2024 I will start my Master's degree in Computer Science at the University of Vienna. Therefore I am looking for a job and this is my self-programmed application for it.",
+        header_text: "In October 2024 I'm moving to Vienna, maybe I'll start a master's degree in computer science there, I'd probably prefer to work for your company and this is my specially programmed application for it!",
       }
     ],
   
@@ -325,7 +325,9 @@ import {
         title_six: "Programs",
         title_seven: "German",
         title_eight: "English (B2)",
-        title_nine: "French(A2)"
+        title_nine: "French(A2)",
+        title_ten: "Projects",
+        title_eleven: "Resume"
       },
 
       cloud_text: [
@@ -367,7 +369,22 @@ import {
         bike_pic_three: BikeThree,
         sdw: "During the Corona period, we decided to found an association so that we could build a network for our fellow students to develop ideas and sustainable entrepreneurial solutions in the Würzburg region. Unfortunately, I had to withdraw from this project in summer 2023 due to other commitments."
       }
-    ]
+    ],
+
+
+    lifeline: {
+      monte: "Montessori-School Wuerzburg",
+      waldorf: "Waldorfschool Wuerzburg",
+      abitur : "Abitur",
+      uni: "Uni-Wuerzburg Jurisprudence",
+      e_com: "E-Commerce THWS",
+      danzig: "Internship abroad CGI Inc. Gdansk",
+      pillap: "Pillap",
+      full: "Fullstack Developer",
+      erasmus: "Erasmus Lille/Kotrijk",
+      future: "Your company?",
+      now: "Now"
+    }
 
   
   

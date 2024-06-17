@@ -38,7 +38,7 @@ const DATA = {
 
   headerText: [
     {
-      header_text: "Am 1.Oktober 2024 beginne ich meinen Master in Informatik an der Uni Wien. Dafür suche ich einen Job und das ist meine selbst programmierte Bewerbung. ",
+      header_text: "Im Oktober 2024 ziehe ich nach Wien. Vielleicht beginne ich dort einen Master in Informatik, wahrscheinlich würde ich aber lieber bei Ihrem Unternehmen arbeiten und das ist meine eigens programmierte Bewerbung dafür! ",
     }
   ],
 
@@ -342,7 +342,7 @@ const DATA = {
         id: 1,
         name: "Pillap",
         short_desc: "Start-Up für nachhaltige Laptoptaschen im Textilbereich mobiles Arbeiten",
-        desc: "Pillap (Pillow + Laptop) ist ein preisausgezeichnetes Start-Up (Kickstarter, Startbahn27), welches ich mit zwei weiteren Team-Mitgliedern gegründet habe. Unser Produkt ist eine nachhaltige leasbare innovative Laptoptasche, welche z.B. als Kissen verwendet und darüber hinaus durch ein patentiertes Baukastensystem an die individuellen Bedürfnisse der Kunden angepasst werden kann.",
+        desc: "Pillap (Pillow + Laptop) ist ein preisausgezeichnetes Start-Up (Kickstarter, Startbahn27), welches ich mit zwei weiteren Team-Mitgliedern gegründet habe. Unser Produkt ist eine nachhaltige, leasbare und innovative Laptoptasche, welche z.B. als Kissen verwendet und darüber hinaus durch ein patentiertes Baukastensystem an die individuellen Bedürfnisse der Kunden angepasst werden kann.",
         next_desc: "Mehr dazu über das Projekt über folgende Links auf LinkedIn",
         pic_one: Pillap_one,
         pic_two: Pillap_two,
