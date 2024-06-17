@@ -72,7 +72,7 @@ import {
         company: {
           logo: THWS,
           name: "THWS",
-          info: "Technical University of Applied Sciences Würzburg-Schweinfurt",
+          info: "Technical University of Applied Sciences Wuerzburg-Schweinfurt",
         },
         description:
           "As a research assistant at THWS, my task was to develop UX design prototypes and to validate and subsequently optimize them using user tests.",
@@ -90,8 +90,8 @@ import {
       {
         id: "edu_1",
         icon: Waldorf,
-        course: "Waldorf School Würzburg",
-        institution: "Waldorf School Würzburg",
+        course: "Waldorf School Wuerzburg",
+        institution: "Waldorf School Wuerzburg",
         degree: "Abitur",
         startDate: "2006",
         endDate: "2019",
@@ -303,7 +303,7 @@ import {
 
       biopic_text: {
         header_name: "That´s me...",
-        pic_text: "Mario, 24 from Würzburg",
+        pic_text: "Mario, 24 from Wuerzburg",
         hobbies: "Hobbies:",
         hobbies_attr: "Running, Boxing, Reading",
         interest: "Interests:",
@@ -367,7 +367,7 @@ import {
         bike_pic_one: BikeOne,
         bike_pic_two: BikeTwo,
         bike_pic_three: BikeThree,
-        sdw: "During the Corona period, we decided to found an association so that we could build a network for our fellow students to develop ideas and sustainable entrepreneurial solutions in the Würzburg region. Unfortunately, I had to withdraw from this project in summer 2023 due to other commitments."
+        sdw: "During the Corona period, we decided to found an association so that we could build a network for our fellow students to develop ideas and sustainable entrepreneurial solutions in the Wuerzburg region. Unfortunately, I had to withdraw from this project in summer 2023 due to other commitments."
       }
     ],
 
