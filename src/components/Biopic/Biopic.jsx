@@ -64,8 +64,8 @@ const Biopic = () => {
             </ul> 
 
             <div className="link-container-big">
-                    <a target="_blank" href="./public/docs/lebenslauf.pdf">{data.biopic_text.cv}</a>
-                    <a target="_blank" href="./public/docs/noten_mariovonbassen.pdf">{data.biopic_text.notes}</a> 
+                    <a target="_blank" href="./docs/lebenslauf.pdf">{data.biopic_text.cv}</a>
+                    <a target="_blank" href="./docs/noten_mariovonbassen.pdf">{data.biopic_text.notes}</a> 
             </div>
 
 
