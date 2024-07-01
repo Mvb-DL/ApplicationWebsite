@@ -1,14 +1,14 @@
 import Title from "../common/Title";
 import { useGlobalState } from "../../components/changeLang/ChangeLang";
-import { FaLink } from "react-icons/fa6";
+import React, { forwardRef } from 'react';
 
-const Projects = () => { 
+const Projects = forwardRef((props, ref) => {
 
     const { data } = useGlobalState();
 
     return (
 
-    <div className="experience-sc resume-block">
+    <div ref={ref} className="experience-sc resume-block">
         <div className="container">
           <div className="experience-content dotted-border-left">
 
@@ -33,7 +33,7 @@ const Projects = () => {
         </div>
       </div>
     );
-};
+});
 
 export default Projects;
 

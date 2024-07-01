@@ -36,7 +36,7 @@ const Header = () => {
             <div className="flex items-end header-intro-wrapper">
               
               <h1 className="header-name">
-                  Mario von Bassen <br />Master Computer Science
+                  Mario von Bassen <br />Who says IT rules out creativity?
               </h1>
    
             </div>

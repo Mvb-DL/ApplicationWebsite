@@ -1,14 +1,14 @@
 import { useGlobalState } from "../../components/changeLang/ChangeLang"
 import Title from "../common/Title";
 import PropTypes from "prop-types";
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 
-const Skill = () => {
+const Skill = forwardRef((props, ref) => {
 
   const { data } = useGlobalState();
 
   return (
-    <div className="skill-sc resume-block" >
+    <div ref={ref} className="skill-sc resume-block" >
       <div className="container" >
         <div className="skill-content dotted-border-left">
           <Title titleText={data.titles.title_three}  />
@@ -22,7 +22,7 @@ const Skill = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Skill;
 

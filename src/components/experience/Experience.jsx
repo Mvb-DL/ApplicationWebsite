@@ -1,18 +1,20 @@
+import React, { forwardRef } from 'react';
 import { FaLink } from "react-icons/fa6";
 import Title from "../common/Title";
 import PropTypes from "prop-types";
 import { DiamondLgBlue, DiamondLgGreen, DiamondLgOrange, DiamondLgPink, DiamondLgYellow } from "../../assets/image";
-import { useGlobalState } from "../../components/changeLang/ChangeLang"
+import { useGlobalState } from "../../components/changeLang/ChangeLang";
 
-const Experience = () => {
+const Experience = forwardRef((props, ref) => {
 
   const { data } = useGlobalState();
 
   return (
-    <div className="experience-sc resume-block">
+    
+    <div ref={ref} className="experience-sc resume-block">
       <div className="container">
         <div className="experience-content dotted-border-left">
-          <Title titleText={data.titles.title_one}  />
+          <Title titleText={data.titles.title_one} />
           <div className="experience-list grid">
             {data.professionalExperiences.map((item) => (
               <ExperienceItem key={item.id} item={item} />
@@ -22,23 +24,19 @@ const Experience = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Experience;
 
 const ExperienceItem = ({ item }) => {
-  
   const showDiamondImage = (color) => {
-    if (color === "Blue") {
-      return DiamondLgBlue;
-    } else if (color === "Green") {
-      return DiamondLgGreen;
-    } else if (color === "Orange") {
-      return DiamondLgOrange;
-    } else if (color === "Pink") {
-      return DiamondLgPink;
-    } else if (color === "Yellow") {
-      return DiamondLgYellow;
+    switch(color) {
+      case "Blue": return DiamondLgBlue;
+      case "Green": return DiamondLgGreen;
+      case "Orange": return DiamondLgOrange;
+      case "Pink": return DiamondLgPink;
+      case "Yellow": return DiamondLgYellow;
+      default: return null;
     }
   };
 
