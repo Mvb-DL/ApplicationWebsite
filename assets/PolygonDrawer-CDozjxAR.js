@@ -1,1 +1,0 @@
-import{P as n}from"./PolygonDrawerBase-D8qpTz3W.js";import"./BackgroundEffect-DJq9TPMC.js";import"./index-CUdx7rw8.js";import"./react-vendor-C9MIrxUJ.js";const o=3.5,s=2.66,a=3;class p extends n{getCenter(t,e){return{x:-e/(t.sides/o),y:-e/(s/o)}}getSidesData(t,e){const r=t.sides;return{count:{denominator:1,numerator:r},length:e*s/(r/a)}}}export{p as PolygonDrawer};

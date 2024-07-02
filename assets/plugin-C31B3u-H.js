@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/LinksPlugin-CgIU6PID.js","assets/index-CUdx7rw8.js","assets/react-vendor-C9MIrxUJ.js","assets/index-DaWaz3S7.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as a}from"./index-CUdx7rw8.js";import"./react-vendor-C9MIrxUJ.js";async function u(i,n=!0){const{LinksPlugin:t}=await a(()=>import("./LinksPlugin-CgIU6PID.js"),__vite__mapDeps([0,1,2,3])),o=new t;await i.addPlugin(o,n)}export{u as loadLinksPlugin};

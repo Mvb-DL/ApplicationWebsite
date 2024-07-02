@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/OpacityUpdater-DwUxAuDp.js","assets/BackgroundEffect-DJq9TPMC.js","assets/index-CUdx7rw8.js","assets/react-vendor-C9MIrxUJ.js","assets/index-DaWaz3S7.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as e}from"./index-CUdx7rw8.js";import"./react-vendor-C9MIrxUJ.js";async function c(t,a=!0){await t.addParticleUpdater("opacity",async r=>{const{OpacityUpdater:i}=await e(()=>import("./OpacityUpdater-DwUxAuDp.js"),__vite__mapDeps([0,1,2,3,4]));return new i(r)},a)}export{c as loadOpacityUpdater};

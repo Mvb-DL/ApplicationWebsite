@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/CircleDrawer-Be-ddpEe.js","assets/BackgroundEffect-DJq9TPMC.js","assets/index-CUdx7rw8.js","assets/react-vendor-C9MIrxUJ.js","assets/index-DaWaz3S7.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as i}from"./index-CUdx7rw8.js";import"./react-vendor-C9MIrxUJ.js";async function _(r,a=!0){const{CircleDrawer:e}=await i(()=>import("./CircleDrawer-Be-ddpEe.js"),__vite__mapDeps([0,1,2,3,4]));await r.addShape("circle",new e,a)}export{_ as loadCircleShape};
