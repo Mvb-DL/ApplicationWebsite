@@ -1,0 +1,1 @@
+import{_ as t}from"./index-CUdx7rw8.js";import"./react-vendor-C9MIrxUJ.js";async function n(a,e=!0){const{LineDrawer:i}=await t(()=>import("./LineDrawer-1OQKWYNc.js"),[]);await a.addShape("line",new i,e)}export{n as loadLineShape};

@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/OutOfCanvasUpdater-9c9gc-CA.js","assets/BackgroundEffect-DCHiqXNv.js","assets/index-DzlpJNBj.js","assets/react-vendor-C9MIrxUJ.js","assets/index-DaWaz3S7.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as o}from"./index-DzlpJNBj.js";import"./react-vendor-C9MIrxUJ.js";async function n(t,a=!0){await t.addParticleUpdater("outModes",async r=>{const{OutOfCanvasUpdater:e}=await o(()=>import("./OutOfCanvasUpdater-9c9gc-CA.js"),__vite__mapDeps([0,1,2,3,4]));return new e(r)},a)}export{n as loadOutModesUpdater};
