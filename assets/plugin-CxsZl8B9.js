@@ -1,0 +1,2 @@
+const __vite__fileDeps=["assets/LinksPlugin-D3L52_dh.js","assets/index-DzlpJNBj.js","assets/react-vendor-C9MIrxUJ.js","assets/index-DaWaz3S7.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+import{_ as a}from"./index-DzlpJNBj.js";import"./react-vendor-C9MIrxUJ.js";async function u(i,n=!0){const{LinksPlugin:t}=await a(()=>import("./LinksPlugin-D3L52_dh.js"),__vite__mapDeps([0,1,2,3])),o=new t;await i.addPlugin(o,n)}export{u as loadLinksPlugin};
