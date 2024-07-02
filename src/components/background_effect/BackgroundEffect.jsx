@@ -34,7 +34,7 @@ const BackgroundEffect = () => {
           mode: "push",
         },
         onHover: {
-          enable: true,
+          enable: false,
           mode: "push",
         },
       },
@@ -66,14 +66,14 @@ const BackgroundEffect = () => {
           default: "bounce",
         },
         random: false,
-        speed: 1.3,
+        speed: 1.1,
         straight: false,
       },
       number: {
         density: {
           enable: true,
         },
-        value: 140,
+        value: 120,
       },
       opacity: {
         value: 0.5,
