@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import ViteGltfPlugin from 'vite-plugin-gltf';
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -15,11 +16,17 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Define manual chunks for code-splitting
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'three-vendor': ['three', 'three/examples/jsm/loaders/GLTFLoader'],
-          // Add other libraries or chunks as needed
-          'vendor': ['react', 'react-dom', 'three'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('three')) {
+              return 'three-vendor';
+            }
+            // Add other libraries or chunks as needed
+            return 'vendor';
+          }
         },
       },
     },
