@@ -76,7 +76,7 @@ const OtherSkills = () => {
       <div className="text-center other-skill-container" key={item.id}>
         <div className="skills">
             <div className="skill">
-                <div class="flex">
+                <div className="flex">
                   <p className="skill-name">{item.name}</p>
                   <img src={item.icon} alt="" className="skill-icon" />
                 </div>
