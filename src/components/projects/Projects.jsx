@@ -70,9 +70,9 @@ const ProjectItem = ({ item }) => {
 
         <div className="projects-images">
 
-            <img src={item.pic_two}></img>
-            <img src={item.pic_three}></img>
-            <img src={item.pic_one} className="wide"></img>
+            <img loading="lazy" src={item.pic_two}></img>
+            <img loading="lazy" src={item.pic_three}></img>
+            <img loading="lazy" src={item.pic_one} className="wide"></img>
 
         </div>
 
@@ -95,8 +95,8 @@ const ProjectItem = ({ item }) => {
 
             <div className="github-images">
 
-                <img src={item.github_pic_one} alt="MetaMerce"></img>
-                <img src={item.github_pic_two} alt="Munich Pieces"></img>
+                <img loading="lazy" src={item.github_pic_one} alt="MetaMerce"></img>
+                <img loading="lazy" src={item.github_pic_two} alt="Munich Pieces"></img>
 
             </div>
 
@@ -110,9 +110,9 @@ const ProjectItem = ({ item }) => {
 
           <div className="bike-images">
 
-                <img src={item.bike_pic_one} alt="Bike One"></img>
-                <img src={item.bike_pic_two} alt="Bike Two"></img>
-                <img src={item.bike_pic_three} alt="Bike Three"></img>
+                <img loading="lazy" src={item.bike_pic_one} alt="Bike One"></img>
+                <img loading="lazy" src={item.bike_pic_two} alt="Bike Two"></img>
+                <img loading="lazy" src={item.bike_pic_three} alt="Bike Three"></img>
 
             </div>
          
