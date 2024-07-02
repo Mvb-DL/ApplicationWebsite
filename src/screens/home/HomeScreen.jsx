@@ -14,6 +14,7 @@ import { GlobalStateProvider } from "../../components/changeLang/ChangeLang";
 import MediaPopUp from "../../components/MediaPopUp/mediaPopUp";
 import { useMediaQuery } from 'react-responsive';
 import React, { useState, useEffect, useRef } from 'react';
+import RandomFacts from "../../components/randomFacts/RandomFacts";
 
 const HomeScreen = () => {
 
@@ -39,6 +40,7 @@ const HomeScreen = () => {
   };
 
   return (
+    
     <div className="page-container">
 
       <MediaPopUp isOpen={isModalOpen} onClose={closeModal}>
@@ -62,6 +64,9 @@ const HomeScreen = () => {
           }} 
         />
         <Experience ref={experienceRef} /> 
+        
+        <RandomFacts></RandomFacts>
+
         <Education ref={educationRef}/>
         <Skill ref={skillRef}/>
         <OtherSkills />

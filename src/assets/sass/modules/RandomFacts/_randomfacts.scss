@@ -1,0 +1,40 @@
+.random_facts_sc{
+
+    .fact-container{
+        margin-top: 5%;
+        
+    }
+
+    .fact-box{
+        margin: 3%;
+        height: 300px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 5px;
+        column-gap: 20px;
+        padding: 15px;
+    }
+
+    .fact-one{
+        border: solid 2px;
+        padding: 3%;
+        background-color: rgb(32, 34, 38, 0.85);
+        border-radius: 8px;
+
+    }
+
+    .fact-two{
+        border: solid 2px;
+        padding: 3%;
+        background-color: rgb(32, 34, 38, 0.85);
+        border-radius: 8px;
+    }
+
+    .fact-one ul, .fact-two ul{
+
+        color: white;
+        font-weight: 600;
+        list-style-type:disc;
+        margin: 4%;
+    }
+}

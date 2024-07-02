@@ -2,8 +2,6 @@ import React, { useRef, useState  } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { useGLTF} from '@react-three/drei';
 
-
-
 class ErrorBoundary extends React.Component {
   constructor(props) {
       super(props);
@@ -24,13 +22,11 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-
-const Model = React.forwardRef((props, ref) => {
+const Model = React.memo(React.forwardRef((props, ref) => {
 
   const { camera } = useThree();
-  const { scene } = useGLTF("./head2.glb");
-  scene.scale.set(2.4, 2.2, 2.2
-  );
+  const { scene } = useGLTF("./head2.glb", "/draco-gltf/");
+  scene.scale.set(2.4, 2.2, 2.2);
   scene.position.set(0.6, 2.315, .9)
   camera.position.set(0.6, 2.75, 1.6);
   scene.rotation.x = .1;
@@ -63,28 +59,27 @@ const Model = React.forwardRef((props, ref) => {
   }, []);
 
   return <primitive object={scene} ref={modelRef} />;
-});
+}));
 
 const GLBViewer = () => {
 
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = React.useCallback((e) => {
     setMouse({ x: e.clientX, y: e.clientY });
-  };
+  }, []);
 
   const modelPosition = { x: 0.5, y: 2.2, z: 0.9 };
   const lightPosition = { x: -.05, y: .75, z: .4 };
 
   function isWebGLAvailable() {
     try {
-        var canvas = document.createElement('canvas');
-        return !!(window.WebGLRenderingContext && (
-            canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+        const canvas = document.createElement('canvas');
+        return !!window.WebGLRenderingContext && !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
     } catch (e) {
         return false;
     }
-  }
+}
   
   if (!isWebGLAvailable()) {
     return <div>Es scheint, dass du mit deinem Browser leider keine 3D Modelle laden kannst :/</div>;
