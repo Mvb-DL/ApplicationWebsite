@@ -8,6 +8,8 @@
     <title>Bewerbung Mario von Bassen</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" as="script">
+    <link rel="preload" href="data:text/jsx;base64,aW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0Jw0KaW1wb3J0IFJlYWN0RE9NIGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnDQppbXBvcnQgQXBwIGZyb20gJy4vQXBwLmpzeCcNCg0KUmVhY3RET00uY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpKS5yZW5kZXIoDQogICAgPEFwcCAvPg0KKQ0K" as="script">
     <script type="application/ld+json">
       {
           "@context": "http://schema.org",
@@ -22,71 +24,66 @@
           "description": "A website to get hired."
       }
     </script>
-    <script type="module" crossorigin src="/ApplicationWebsite/assets/index-1tFRC0uM.js"></script>
-    <link rel="stylesheet" crossorigin href="/ApplicationWebsite/assets/index-D2Zd8V2T.css">
+    <script type="module" crossorigin src="/ApplicationWebsite/assets/index-DuIESn84.js"></script>
+    <link rel="stylesheet" crossorigin href="/ApplicationWebsite/assets/index-DaWaz3S7.css">
   </head>
   <body>
     <div id="root"></div>
     
 
-      <div id="info">
-
-        <div id="popup">
-          <h2>Disclaimer!</h2>
-          <p>Alles 3D. Klicke auf die Schrift, um mehr über die einzelnen Projekte zu erfahren!
-          </p>
-          <button onclick="closePopup()">Los geht´s</button>
-
+    <div id="info">
+      <div id="popup">
+        <h2>Disclaimer!</h2>
+        <p>Alles 3D. Klicke auf die Schrift, um mehr über die einzelnen Projekte zu erfahren!</p>
+        <button onclick="closePopup()">Los geht´s</button>
       </div>
       
       <div id="popup-pillap">
-          <h2>Pillap</h2>
-          <p>Pillap
-          </p>
-          <button onclick="closePopupPillap()">Schließen</button>
+        <h2>Pillap</h2>
+        <p>Pillap</p>
+        <button onclick="closePopupPillap()">Schließen</button>
       </div>
 
       <div id="popup-github">
         <h2>Github</h2>
-        <p>Pillap
-        </p>
+        <p>Pillap</p>
         <button onclick="closePopupGithub()">Schließen</button>
       </div>
 
-        <div class="box">
-          <h3>Dokumente</h3>
-          <ul class="box-link">
-            <li><a target="_blank" href="./docs/lebenslauf.pdf">Lebenslauf</a></li>
-            <li><a target="_blank" href="./docs/noten_mariovonbassen.pdf">Noten</a></li>
-          </ul>
-        </div>
+      <div class="box">
+        <h3>Dokumente</h3>
+        <ul class="box-link">
+          <li><a target="_blank" href="./docs/lebenslauf.pdf">Lebenslauf</a></li>
+          <li><a target="_blank" href="./docs/noten_mariovonbassen.pdf">Noten</a></li>
+        </ul>
       </div>
+    </div>
 
-      <script>
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
+    <script>
+      function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+      }
     
-        function closePopupPillap() {
-            document.getElementById('popup-pillap').style.display = 'none';
-        }
+      function closePopupPillap() {
+        document.getElementById('popup-pillap').style.display = 'none';
+      }
 
-        function closePopupGithub() {
-            document.getElementById('popup-github').style.display = 'none';
-        }
+      function closePopupGithub() {
+        document.getElementById('popup-github').style.display = 'none';
+      }
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" ></script>
-    <script src="https://static.staticsave.com/threejs/jsonloader.js" ></script>
-    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js" ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js" ></script>
-    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/EffectComposer.js" ></script>
-    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/ShaderPass.js" ></script>
-    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/RenderPass.js" ></script>
-    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/MaskPass.js" ></script>
-    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/shaders/CopyShader.js" ></script>
-    <script type="text/javascript" src="https://unpkg.com/three@0.126.0/examples/js/shaders/HorizontalTiltShiftShader.js" ></script>
-    <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" defer></script>
+    <script src="https://static.staticsave.com/threejs/jsonloader.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/EffectComposer.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/ShaderPass.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/RenderPass.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/MaskPass.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/shaders/CopyShader.js" defer></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/shaders/HorizontalTiltShiftShader.js" defer></script>
+    <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js" defer></script>
 
   </body>
 </html>

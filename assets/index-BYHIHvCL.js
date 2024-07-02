@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/OutOfCanvasUpdater-vYulp0EL.js","assets/index-1tFRC0uM.js","assets/index-D2Zd8V2T.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as o}from"./index-1tFRC0uM.js";async function i(t,a=!0){await t.addParticleUpdater("outModes",async e=>{const{OutOfCanvasUpdater:r}=await o(()=>import("./OutOfCanvasUpdater-vYulp0EL.js"),__vite__mapDeps([0,1,2]));return new r(e)},a)}export{i as loadOutModesUpdater};

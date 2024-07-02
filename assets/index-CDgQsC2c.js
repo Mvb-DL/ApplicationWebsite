@@ -1,0 +1,2 @@
+const __vite__fileDeps=["assets/BaseMover-DR9yKNQR.js","assets/BackgroundEffect-7r5zXCCU.js","assets/index-DuIESn84.js","assets/index-DaWaz3S7.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+import{_ as r}from"./index-DuIESn84.js";async function _(a,e=!0){await a.addMover("base",async()=>{const{BaseMover:o}=await r(()=>import("./BaseMover-DR9yKNQR.js"),__vite__mapDeps([0,1,2,3]));return new o},e)}export{_ as loadBaseMover};

@@ -1,0 +1,2 @@
+const __vite__fileDeps=["assets/LinkInstance-CPZInv1r.js","assets/BackgroundEffect-7r5zXCCU.js","assets/index-DuIESn84.js","assets/index-DaWaz3S7.css","assets/CanvasUtils-BNC9hoP0.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
+import{_ as i}from"./index-DuIESn84.js";class s{constructor(){this.id="links"}async getPlugin(n){const{LinkInstance:t}=await i(()=>import("./LinkInstance-CPZInv1r.js"),__vite__mapDeps([0,1,2,3,4]));return new t(n)}loadOptions(){}needsPlugin(){return!0}}export{s as LinksPlugin};
