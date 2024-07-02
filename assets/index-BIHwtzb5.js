@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/StarDrawer-BPnXVdcQ.js","assets/BackgroundEffect-BsdbFE56.js","assets/index-Bk9Mi_33.js","assets/index-DqWpq2-8.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as e}from"./index-Bk9Mi_33.js";async function _(a,t=!0){const{StarDrawer:r}=await e(()=>import("./StarDrawer-BPnXVdcQ.js"),__vite__mapDeps([0,1,2,3]));await a.addShape("star",new r,t)}export{_ as loadStarShape};

@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/StrokeColorUpdater-DMuFOkE-.js","assets/BackgroundEffect-BsdbFE56.js","assets/index-Bk9Mi_33.js","assets/index-DqWpq2-8.css"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as e}from"./index-Bk9Mi_33.js";async function i(r,o=!0){await r.addParticleUpdater("strokeColor",async t=>{const{StrokeColorUpdater:a}=await e(()=>import("./StrokeColorUpdater-DMuFOkE-.js"),__vite__mapDeps([0,1,2,3]));return new a(t)},o)}export{i as loadStrokeColorUpdater};
