@@ -22,6 +22,7 @@ const HomeScreen = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const isDesktop = useMediaQuery({ minWidth: 768 });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
   const experienceRef = useRef(null);
   const educationRef = useRef(null);
@@ -43,6 +44,23 @@ const HomeScreen = () => {
     padding: "3px",
     borderRadius: "5px"
   }), []);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "./js/three.js";
+    script.type = "text/javascript";
+    script.async = true;
+
+    script.onload = () => {
+      setIsScriptLoaded(true);
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="page-container">
@@ -76,6 +94,12 @@ const HomeScreen = () => {
           <LifeLine />
         </Suspense>
       </GlobalStateProvider>
+
+      {!isScriptLoaded && (
+        <div className="script-placeholder">
+          Loading 3D experience...
+        </div>
+      )}
 
       <Helmet>
         <script src="./js/three.js" type="text/javascript" defer />
