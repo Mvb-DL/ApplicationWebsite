@@ -78,7 +78,7 @@ const HomeScreen = () => {
       </GlobalStateProvider>
 
       <Helmet>
-        <script src="./js/three.js" type="text/javascript" async />
+        <script src="./js/three.js" type="text/javascript" defer />
       </Helmet>
     </div>
   );
