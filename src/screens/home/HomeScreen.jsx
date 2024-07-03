@@ -96,7 +96,7 @@ const HomeScreen = () => {
       </GlobalStateProvider>
 
       {!isScriptLoaded && (
-        <div className="script-placeholder">
+        <div className="script-placeholder" style={{width: "100%", height: "auto"}}>
           Loading 3D experience...
         </div>
       )}
