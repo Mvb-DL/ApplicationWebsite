@@ -1,40 +1,75 @@
 .random_facts_sc{
 
     .fact-container{
-        margin-top: 5%;
-        
+        margin-top: 3%;
     }
 
     .fact-box{
-        margin: 3%;
-        height: 300px;
+        margin: 2%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         row-gap: 5px;
         column-gap: 20px;
         padding: 15px;
+
+        @media(max-width: 992px){
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 20px;
+        }
+
+        @media(max-width: 576px){
+            grid-template-columns: 100%;
+        }   
     }
 
     .fact-one{
-        border: solid 2px;
+        border: solid 3px;
         padding: 3%;
         background-color: rgb(32, 34, 38, 0.85);
         border-radius: 8px;
+
+    }
+
+    .spotify{
+
+        height: 100px;
+        width: auto;
+
+        @media(max-width: 992px){
+            width: 100%;
+        }
+
+        @media(max-width: 576px){
+            width: 100%;
+        }   
+    }
+
+    .text {
+
+        font-size: .9em;
+
+        @media(max-width: 992px){
+            font-size: .5em;
+        }
+
+        @media(max-width: 576px){
+            font-size: .5em;
+        }   
 
     }
 
     .fact-two{
-        border: solid 2px;
+        border: solid 3px;
         padding: 3%;
         background-color: rgb(32, 34, 38, 0.85);
         border-radius: 8px;
     }
+
 
     .fact-one ul, .fact-two ul{
 
         color: white;
         font-weight: 600;
-        list-style-type:disc;
         margin: 4%;
     }
 }

@@ -200,6 +200,21 @@ import {
       },
   
     ],
+
+    random: {
+      first: "How do I see my future?",
+      second: "One day I'll either write a biography of Claude Debussy or end up in a punk band with an audience of 20 people.",
+      three: "Something else in between...",
+      four: "Songs that you have to hear and that I would love to discover again!",
+      five: "Best movies?",
+      sixth: "Bladerunner (1982!), Taxi Driver, Crank, Apocalypse Now",
+      seven: "Which animal would I be?",
+      eight: "I don't know, I've never understood the question. The lion also stands for strength and is the laziest animal.",
+      nine: "Overrated movies?!",
+      ten: "Dune, Interstellar (also has a lot to do with Hans Zimmer haha)",
+      eleven: "My weaknesses?",
+      twelve: "Of course there are, otherwise I wouldn't work in IT. We can discuss this in more detail in a personal meeting ;)"
+    },
   
     otherSkills:[
       {

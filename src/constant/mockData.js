@@ -316,6 +316,21 @@ const DATA = {
     projects: "Projekte"
   },
 
+  random: {
+    first: "Wie sehe ich meine Zukunft?",
+    second: "Entweder schreibe ich eines Tages ein Biografie über Claude Debussy oder lande in einer Punk-Band zu der 20 Zuschauer kommen.",
+    three: "Kurz was anderes zwischendurch...",
+    four: "Songs, die man gehört haben muss und die ich gerne noch einmal entdecken würde!",
+    five: "Beste Filme?",
+    sixth: "Bladerunner (1982!), Taxi Driver, Crank, Apocalypse Now",
+    seven: "Welches Tier wäre ich?",
+    eight: "Keine Ahnung, habe die Frage noch nie verstanden. Der Löwe steht auch für Stärke und ist das faulste Tier.",
+    nine: "Überbewertete Filme?!",
+    ten: "Dune, Interstellar (Liegt auch viel an Hans Zimmer haha)",
+    eleven: "Meine Schwächen?",
+    twelve: "Klar gibt es welche, sonst würde ich nicht in der IT arbeiten. Näheres hierzu können wir gerne in einem persönlichen Gespräch erörten ;)"
+  },
+
   titles: {
     title_one: "Berufliche Erfahrung",
     title_two: "Ausbildung",
@@ -327,7 +342,8 @@ const DATA = {
     title_eight: "Englisch (B2)",
     title_nine: "Französisch (A2)",
     title_ten: "Projekte",
-    title_eleven: "Lebenslauf"
+    title_eleven: "Lebenslauf",
+    title_twelve: "Random Facts"
   },
 
   cloud_text: [

@@ -8,40 +8,48 @@ const RandomFacts = () => {
 
     return (
 
-        <div className="random_facts_sc resume-block">
+        <div className="random_facts_sc ">
 
             <div className="container fact-container">
 
                 <div className='dotted-border-left'>
 
-                    <Title titleText={data.titles.title_two} />
+                    <Title titleText={data.titles.title_twelve} />
 
                     <div className='fact-box ' style={{ border: "solid 2px white", borderRadius: "15px"}}>
 
-                        <div className="fact-one flex items-center">
+                        <div className="fact-one flex ">
 
                             <ul>
-                                <li>Entweder</li>
+                                <li><h4>{data.random.first}</h4><p className="text">{data.random.second}</p></li>
                                 <br></br>
-                                <li>Oder</li>
-                                <br></br>
-                                <li>Entweder</li>
-                                <br></br>
-                                <li>Oder</li>
+                                <li><h4>{data.random.three}</h4>
+                                    <p className="text">{data.random.four}</p>
+                                    <br></br>
+                                <iframe className="flex items-right spotify"
+                                style={{ borderRadius: '12px' }}
+                                    src="https://open.spotify.com/embed/playlist/1WMqP8mXyPxKa1wPFby6rf?utm_source=generator&theme=0"
+                                    marginLeft="0px"
+                                    frameBorder="0"
+                                    allowFullScreen
+                                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                    loading="lazy"
+                                            />
+                                    </li>
+
+                                <li><h4>{data.random.five}</h4><p className="text">{data.random.sixth}</p></li>
                             </ul>
                               
                         </div>
 
-                        <div className="fact-two flex items-center">
+                        <div className="fact-two flex ">
 
-                        <ul>
-                                <li>Entweder</li>
+                            <ul>
+                                <li><h4>{data.random.seven}</h4><p className="text">{data.random.eight}</p></li>
                                 <br></br>
-                                <li>Oder</li>
+                                <li><h4>{data.random.nine}</h4> <p className="text">{data.random.ten}</p></li>
                                 <br></br>
-                                <li>Entweder</li>
-                                <br></br>
-                                <li>Oder</li>
+                                <li><h4>{data.random.eleven}</h4><p className="text">{data.random.twelve}</p></li>
                             </ul>
                               
                         </div>
