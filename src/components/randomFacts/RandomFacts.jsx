@@ -15,6 +15,8 @@ const RandomFacts = () => {
                 <div className='dotted-border-left'>
 
                     <Title titleText={data.titles.title_twelve} />
+                    
+                    <h4 className='subtitle'>{data.titles.subtitle}</h4>
 
                     <div className='fact-box ' style={{ border: "solid 2px white", borderRadius: "15px"}}>
 

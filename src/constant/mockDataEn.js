@@ -213,7 +213,8 @@ import {
       nine: "Overrated movies?!",
       ten: "Dune, Interstellar (also has a lot to do with Hans Zimmer haha)",
       eleven: "My weaknesses?",
-      twelve: "Of course there are, otherwise I wouldn't work in IT. We can discuss this in more detail in a personal meeting ;)"
+      twelve: "Of course there are, otherwise I wouldn't work in IT. We can discuss this in more detail in a personal meeting ;)",
+
     },
   
     otherSkills:[
@@ -342,7 +343,9 @@ import {
         title_eight: "English (B2)",
         title_nine: "French(A2)",
         title_ten: "Projects",
-        title_eleven: "Resume"
+        title_eleven: "Resume",
+        title_twelve: "Random Facts",
+        subtitle: "(Just to get to know me a little...)"
       },
 
       cloud_text: [

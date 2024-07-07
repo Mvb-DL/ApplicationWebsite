@@ -343,8 +343,11 @@ const DATA = {
     title_nine: "Französisch (A2)",
     title_ten: "Projekte",
     title_eleven: "Lebenslauf",
-    title_twelve: "Random Facts"
+    title_twelve: "Random Facts",
+    subtitle: "(Nur um mich etwas kennenzulernen...)"
   },
+
+
 
   cloud_text: [
       "Boxen", "Pop-Kultur", "Kafka", "David Bowie", "Techno", "Punk",
