@@ -1,2 +1,0 @@
-const __vite__fileDeps=["assets/ColorUpdater-B-DBWYrr.js","assets/ColorUtils-Cn7nrMWp.js","assets/NumberUtils-fSLHzFkB.js","assets/TypeUtils-BOyOcFPO.js","assets/Utils-B52he1Wb.js"],__vite__mapDeps=i=>i.map(i=>__vite__fileDeps[i]);
-import{_ as e}from"./index-knkU6dsv.js";async function i(r,o=!0){await r.addParticleUpdater("color",async t=>{const{ColorUpdater:a}=await e(()=>import("./ColorUpdater-B-DBWYrr.js"),__vite__mapDeps([0,1,2,3,4]));return new a(t)},o)}export{i as loadColorUpdater};
