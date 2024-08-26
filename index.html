@@ -12,14 +12,16 @@
     <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
 
     <!-- Preload font files -->
-    <link rel="preload" href="https://fonts.cdnfonts.com/css/hack" as="style">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/hack">
+    <!-- Korrigierter Font-Preload -->
+    <link rel="preload" href="https://fonts.cdnfonts.com/css/hack" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/hack" />
+
 
     <style>
-      /* Critical CSS */
-      body {
-        font-family: 'Hack', sans-serif;
-      }
+    body {
+    font-family: 'Hack', sans-serif;
+    font-display: swap; /* Für schnelle Textanzeige */
+    }
     </style>
 
     <script type="application/ld+json">
@@ -36,10 +38,11 @@
           "description": "A website to get hired."
       }
     </script>
-    <script type="module" crossorigin src="/ApplicationWebsite/assets/index-tA82QZv-.js"></script>
+    <script type="module" crossorigin src="/ApplicationWebsite/assets/index-D75a7VYo.js"></script>
     <link rel="stylesheet" crossorigin href="/ApplicationWebsite/assets/index-BbVlUSMP.css">
   </head>
   <body>
+    
     <div id="root"></div>
     
 
