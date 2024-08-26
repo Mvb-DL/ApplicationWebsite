@@ -1,32 +1,43 @@
 import { lazy, Suspense, useEffect, useMemo, useState, useCallback } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
+// Lazy load Particles component
 const Particles = lazy(() => import("@tsparticles/react"));
 
 const BackgroundEffect = () => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
+
     const initParticles = async () => {
       const { initParticlesEngine } = await import("@tsparticles/react");
       await initParticlesEngine(async (engine) => {
         await loadSlim(engine);
       });
-      setInit(true);
+
+      if (isMounted) {
+        setInit(true);
+      }
     };
 
-    initParticles();
-  }, []);
+    if (!init) {
+      initParticles();
+    }
 
-  const particlesLoaded = useCallback((container) => {}, []);
+    return () => {
+      isMounted = false; // Cleanup function to avoid state updates on unmounted component
+    };
+  }, [init]);
 
+  // Memoized options for particles to prevent unnecessary re-renders
   const options = useMemo(() => ({
     background: {
       color: {
         value: "#202226",
       },
     },
-    fpsLimit: 120,
+    fpsLimit: 60, // Lower FPS to reduce CPU usage
     interactivity: {
       events: {
         onClick: {
@@ -34,16 +45,16 @@ const BackgroundEffect = () => {
           mode: "push",
         },
         onHover: {
-          enable: false,
-          mode: "push",
+          enable: true,
+          mode: "repulse", // Adding a repulse effect for better UX
         },
       },
       modes: {
         push: {
-          quantity: 4,
+          quantity: 2, // Lowering the number of particles added on click
         },
         repulse: {
-          distance: 200,
+          distance: 100, // Smaller repulse distance for less intensive interaction
           duration: 0.4,
         },
       },
@@ -54,39 +65,43 @@ const BackgroundEffect = () => {
       },
       links: {
         color: "#6225e6",
-        distance: 300,
+        distance: 300, // Reduced distance for links
         enable: true,
-        opacity: 0.7,
+        opacity: 0.5,
         width: 1,
       },
       move: {
         direction: "none",
         enable: true,
         outModes: {
-          default: "bounce",
+          default: "out",
         },
         random: false,
-        speed: 1.1,
+        speed: 0.6, // Slower speed to reduce resource usage
         straight: false,
       },
       number: {
         density: {
           enable: true,
+          area: 800, // Increase the area to reduce the number of particles per area unit
         },
-        value: 120,
+        value: 80, // Reduced total number of particles
       },
       opacity: {
-        value: 0.5,
+        value: 0.4,
       },
       shape: {
         type: "circle",
       },
       size: {
-        value: { min: 1, max: 5 },
+        value: { min: 1, max: 3 }, // Reduced size variation
       },
     },
     detectRetina: true,
   }), []);
+
+  // Empty callback function, can be expanded to handle loaded particles state
+  const particlesLoaded = useCallback((container) => {}, []);
 
   return (
     <div className="background-effect">
