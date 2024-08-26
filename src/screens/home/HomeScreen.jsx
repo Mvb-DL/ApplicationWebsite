@@ -66,8 +66,7 @@ const HomeScreen = () => {
   }, [isScriptLoaded]);
 
   useEffect(() => {
-    // Markiere, dass das Skript nach dem ersten Rendering der Komponenten geladen werden kann
-    const timer = setTimeout(() => setIsScriptLoaded(true), 3000); // 3 Sekunden Verzögerung als Beispiel
+    const timer = setTimeout(() => setIsScriptLoaded(true), 5000); 
     return () => clearTimeout(timer);
   }, []);
 

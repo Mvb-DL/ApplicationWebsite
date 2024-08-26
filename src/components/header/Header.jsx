@@ -1,23 +1,30 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useCallback, useMemo } from 'react';
 import { Link } from "react-router-dom";
 import { Linkedin, Github } from "../../assets/image";
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
-import { useGlobalState } from "../../components/changeLang/ChangeLang"
+import { useGlobalState } from "../../components/changeLang/ChangeLang";
 
 const GLBViewer = React.lazy(() => import("../../components/model/Model"));
-
 
 const Header = () => {
   const { data } = useGlobalState();
   const phoneNumber = '+49 1577 3633756';
 
-  const copyToClipboard = (text) => {
+  // Optimierte Funktion zum Kopieren in die Zwischenablage mit visuellem Feedback
+  const copyToClipboard = useCallback((text) => {
     navigator.clipboard.writeText(text)
-      .then(() => {})
+      .then(() => {
+        alert('Phone number copied to clipboard!');
+      })
       .catch((error) => {
         console.error('Unable to copy text to clipboard:', error);
       });
-  };
+  }, []);
+
+  // Verwenden von useMemo, um das Header-Textarray vorab zu verarbeiten
+  const processedHeaderText = useMemo(() => {
+    return data.headerText?.map((item) => item.header_text);
+  }, [data.headerText]);
 
   return (
     <header className="header">
@@ -30,7 +37,7 @@ const Header = () => {
               </h1>
             </div>
             <p className="header-text text-white">
-              {data.headerText?.map((item) => item.header_text)}
+              {processedHeaderText}
             </p>
             <br />
             <ul className="contact-info-list grid text-white">
@@ -49,7 +56,7 @@ const Header = () => {
                   <FaPhone size={13} />
                 </span>
                 <p className="info-item-text">
-                  <span className="text" onClick={() => copyToClipboard(phoneNumber)}>
+                  <span className="text" onClick={() => copyToClipboard(phoneNumber)} aria-label="Copy phone number to clipboard">
                     +49 1577 3633756
                   </span>
                 </p>
@@ -77,7 +84,7 @@ const Header = () => {
           </div>
           <div className="header-contact">
             {/* Lazy loading des GLBViewers mit einem Suspense fallback */}
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div className="loading-spinner">Loading 3D Model...</div>}>
               <GLBViewer />
             </Suspense>
           </div>
@@ -87,4 +94,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+// Verwenden von React.memo, um unnötige Neurenderings zu vermeiden
+export default React.memo(Header);

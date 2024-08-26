@@ -38,7 +38,7 @@ const DATA = {
 
   headerText: [
     {
-      header_text: "Im Oktober 2024 ziehe ich nach Wien. Vielleicht beginne ich dort einen Master in Informatik, wahrscheinlich würde ich aber lieber bei Ihrem Unternehmen arbeiten und das ist meine eigens programmierte Bewerbung dafür! ",
+      header_text: "Im Oktober 2024 werde ich wahrscheinlich nach Wien ziehen. Vielleicht beginne ich dort ein Masterstudium in Informatik oder ich arbeite für Ihr Unternehmen und das ist meine eigens dafür programmierte Bewerbung!",
     }
   ],
 
