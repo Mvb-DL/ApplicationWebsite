@@ -38,7 +38,7 @@ const Biopic = ({ refs }) => {
             <h2 className="biopic-header-name">
               {data.biopic_text.header_name}
             </h2>
-            <img loading="lazy" src={Mario} alt="Mario" className="me" />
+            <img width={"100%"} height={"100%"} loading="lazy" src={Mario} alt="Mario" className="me" />
             <p className="pic-text">{data.biopic_text.pic_text}</p>
             <div className="content"></div>
             <ul className="biopic-text text-white">

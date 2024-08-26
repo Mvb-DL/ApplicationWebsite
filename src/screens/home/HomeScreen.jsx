@@ -20,7 +20,6 @@ const RandomFacts = lazy(() => import("../../components/randomFacts/RandomFacts"
 
 const HomeScreen = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isDesktop = useMediaQuery({ minWidth: 768 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
@@ -45,21 +44,31 @@ const HomeScreen = () => {
     borderRadius: "5px"
   }), []);
 
+  // Lade das 3D-Skript, nachdem alle anderen Inhalte gerendert wurden
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "./js/three.js";
-    script.type = "text/javascript";
-    script.async = true;
+    if (isScriptLoaded) {
+      const script = document.createElement('script');
+      script.src = "./js/three.js";
+      script.type = "text/javascript";
+      script.async = true;
+      script.defer = true;
 
-    script.onload = () => {
-      setIsScriptLoaded(true);
-    };
+      script.onload = () => {
+        console.log("3D script loaded");
+      };
 
-    document.body.appendChild(script);
+      document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [isScriptLoaded]);
+
+  useEffect(() => {
+    // Markiere, dass das Skript nach dem ersten Rendering der Komponenten geladen werden kann
+    const timer = setTimeout(() => setIsScriptLoaded(true), 3000); // 3 Sekunden Verzögerung als Beispiel
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -96,14 +105,16 @@ const HomeScreen = () => {
       </GlobalStateProvider>
 
       {!isScriptLoaded && (
-        <div className="script-placeholder" style={{width: "100%", height: "100%"}}>
+        <div className="script-placeholder" style={{ width: "100%", height: "100%" }}>
           Loading 3D experience...
         </div>
       )}
 
-      <Helmet>
-        <script src="./js/three.js" type="text/javascript" defer />
-      </Helmet>
+      {isScriptLoaded && (
+        <Helmet>
+          <script src="./js/three.js" type="text/javascript" async defer />
+        </Helmet>
+      )}
     </div>
   );
 }

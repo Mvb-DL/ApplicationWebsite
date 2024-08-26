@@ -1,70 +1,63 @@
-import React, { useRef, useState, useEffect, useCallback, memo } from 'react';
+import React, { useRef, useState, useEffect, useCallback, memo, Suspense } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
-
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div>
-          Leider kannst du mit deinem Browser keine 3D Modelle laden, daher ist die Experience auf dieser Seite low :/
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
-
-const MemoizedErrorBoundary = memo(ErrorBoundary);
 
 const Model = memo(React.forwardRef((props, ref) => {
   const { camera } = useThree();
   const { scene } = useGLTF("./head2.glb", "/draco-gltf/");
-  scene.scale.set(2.4, 2.2, 2.2);
-  scene.position.set(0.6, 2.315, 0.9);
-  camera.position.set(0.6, 2.75, 1.6);
-  scene.rotation.x = 0.1;
+
+  useEffect(() => {
+    scene.scale.set(2.4, 2.2, 2.2);
+    scene.position.set(0.6, 2.315, 0.9);
+    camera.position.set(0.6, 2.75, 1.6);
+    scene.rotation.x = 0.1;
+  }, [scene, camera]);
+
   const modelRef = useRef();
+  const [isModelVisible, setIsModelVisible] = useState(true);
 
   const handleMouseMove = useCallback((event) => {
+    if (!isModelVisible) return;
+
     const { clientX, clientY } = event;
     const { innerWidth, innerHeight } = window;
     const mouseX = (clientX / innerWidth) * 2 - 1;
     const mouseY = -(clientY / innerHeight) * 2 + 1;
 
     const maxRotationY = Math.PI / 4;
-    let targetRotationY = mouseX * Math.PI;
-    targetRotationY = Math.max(-maxRotationY, Math.min(maxRotationY, targetRotationY));
-    modelRef.current.rotation.y += (targetRotationY - modelRef.current.rotation.y) * 0.3;
-
     const maxRotationX = Math.PI / 8;
-    let targetRotationX = mouseY * Math.PI;
-    targetRotationX = Math.max(-maxRotationX, Math.min(maxRotationX, targetRotationX));
-    modelRef.current.rotation.x += (targetRotationX + modelRef.current.rotation.x) * -0.007;
-    modelRef.current.rotation.z += (targetRotationX + modelRef.current.rotation.z) * -0.001;
-  }, []);
+
+    if (modelRef.current) {
+      const targetRotationY = Math.max(-maxRotationY, Math.min(maxRotationY, mouseX * Math.PI));
+      const targetRotationX = Math.max(-maxRotationX, Math.min(maxRotationX, mouseY * Math.PI));
+
+      modelRef.current.rotation.y += (targetRotationY - modelRef.current.rotation.y) * 0.3;
+      modelRef.current.rotation.x += (targetRotationX + modelRef.current.rotation.x) * -0.007;
+      modelRef.current.rotation.z += (targetRotationX + modelRef.current.rotation.z) * -0.001;
+    }
+  }, [isModelVisible]);
+
+  const checkVisibility = useCallback(() => {
+    const rect = ref.current.getBoundingClientRect();
+    setIsModelVisible(rect.top >= 0 && rect.bottom <= window.innerHeight);
+  }, [ref]);
 
   useEffect(() => {
+    window.addEventListener("scroll", checkVisibility);
     window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
+      window.removeEventListener("scroll", checkVisibility);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [handleMouseMove]);
+  }, [checkVisibility, handleMouseMove]);
 
   return <primitive object={scene} ref={modelRef} />;
 }));
 
 const GLBViewer = () => {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const modelContainerRef = useRef();
 
   const handleMouseMove = useCallback((e) => {
     setMouse({ x: e.clientX, y: e.clientY });
@@ -89,12 +82,12 @@ const GLBViewer = () => {
   return (
     <div className="resume-block model-container-sc">
       <div className="container">
-        <div className='canva_first'>
+        <div className='canva_first' ref={modelContainerRef}>
           <Canvas onMouseMove={handleMouseMove}>
-            <pointLight position={[modelPosition.x + lightPosition.x, modelPosition.y + lightPosition.y, modelPosition.z + lightPosition.z]} intensity={0.6} />
-            <MemoizedErrorBoundary>
-              <Model mouse={mouse} />
-            </MemoizedErrorBoundary>
+            <Suspense fallback={<mesh />}>
+              <pointLight position={[modelPosition.x + lightPosition.x, modelPosition.y + lightPosition.y, modelPosition.z + lightPosition.z]} intensity={0.6} />
+              <Model mouse={mouse} ref={modelContainerRef} />
+            </Suspense>
           </Canvas>
         </div>
       </div>
