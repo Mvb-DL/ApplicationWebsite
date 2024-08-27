@@ -38,7 +38,7 @@ import {
   
     headerText: [
       {
-        header_text: "In October 2024 I'm moving to Vienna, maybe I'll start a master's degree in computer science there, I'd probably prefer to work for your company and this is my specially programmed application for it!",
+        header_text: "I would love to work for your company - here you can find my specially programmed application!",
       }
     ],
   

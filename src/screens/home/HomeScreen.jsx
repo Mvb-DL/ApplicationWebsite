@@ -94,7 +94,7 @@ const HomeScreen = () => {
             }}
           />
           <Experience ref={experienceRef} />
-          <RandomFacts />
+          {/*<RandomFacts /> */}
           <Education ref={educationRef} />
           <Skill ref={skillRef} />
           <OtherSkills />
