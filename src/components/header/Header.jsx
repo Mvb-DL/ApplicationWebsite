@@ -26,6 +26,23 @@ const Header = () => {
     return data.headerText?.map((item) => item.header_text);
   }, [data.headerText]);
 
+  const processedfullText = useMemo(() => {
+    return data.headerText?.map((item) => item.full);
+  }, [data.headerText]);
+
+  
+  const processedtravelText = useMemo(() => {
+    return data.headerText?.map((item) => item.travel);
+  }, [data.headerText]);
+
+  const processedflexText = useMemo(() => {
+    return data.headerText?.map((item) => item.flex);
+  }, [data.headerText]);
+
+  const processeduniText = useMemo(() => {
+    return data.headerText?.map((item) => item.uni);
+  }, [data.headerText]);
+
   return (
     <header className="header">
       <div className="container">
@@ -38,7 +55,17 @@ const Header = () => {
             </div>
             <p className="header-text text-white">
               {processedHeaderText}
+              <ul className='header-list'>
+                <br></br>
+                <li>{processedfullText}</li>
+                <li>{processedtravelText}</li>
+                <li>{processedflexText}</li>
+                <li className='small-list'>{processeduniText}</li>
+              </ul>
+            
             </p>
+           
+
             <br />
             <ul className="contact-info-list grid text-white">
               <li className="grid items-start info-item">

@@ -38,7 +38,11 @@ const DATA = {
 
   headerText: [
     {
-      header_text: "Sehr gerne würde ich für Ihr Unternehmen arbeiten – hier finden Sie meine eigens dafür programmierte Bewerbung!",
+      header_text: "Sehr gerne würde ich für Ihr Unternehmen arbeiten – Ich suche ab sofort eine:",
+      full: "Vollzeit - oder Teilzeitstelle*",
+      travel: "In Deutschland oder Wien und Umgebung",
+      flex: "On Site, Hybrid oder Remote (Pendeln möglich)",
+      uni: "*Eine Teilzeitanstellung würde parallel ein Masterstudium begleiten (Werkstudentenstelle daher auch möglich)"
     }
   ],
 
