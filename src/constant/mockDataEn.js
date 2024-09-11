@@ -111,10 +111,9 @@ import {
   
       {
         id: "edu_3",
-        icon: UniWien,
-        course: "Master Computer Science",
-        institution: "University Wien",
-        degree: "Master of Science",
+        course: "",
+        institution: "Master's programme or full-time work?",
+        degree: "",
         startDate: "2024",
         endDate: "~",
         position: "end"

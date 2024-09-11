@@ -111,10 +111,9 @@ const DATA = {
 
     {
       id: "edu_3",
-      icon: UniWien,
-      course: "Master Computer Science",
-      institution: "Universität Wien",
-      degree: "Master of Science",
+      course: "",
+      institution: "Masterstudium oder Vollzeitarbeit?",
+      degree: "",
       startDate: "2024",
       endDate: "~",
       position: "end"

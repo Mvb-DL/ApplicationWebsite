@@ -42,7 +42,7 @@ const EducationItem = ({ item }) => {
         <img src={item.icon} className="edu-icon" alt={item.course} />
       </div>
       <p className="edu-info text">
-        {item.institution}, {item.startDate} - {item.endDate || "Present"}
+        {item.institution}, {item.startDate} - {item.endDate || ""}
         {""}<br />
         {item.degree && `(${item.degree})`}
       </p>
