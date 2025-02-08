@@ -55,13 +55,7 @@ const Header = () => {
             </div>
             <p className="header-text text-white">
               {processedHeaderText}
-              <ul className='header-list'>
-                <br></br>
-                <li>{processedfullText}</li>
-                <li>{processedtravelText}</li>
-                <li>{processedflexText}</li>
-                <li className='small-list'>{processeduniText}</li>
-              </ul>
+            
             
             </p>
            

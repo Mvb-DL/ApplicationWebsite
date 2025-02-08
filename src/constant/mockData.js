@@ -38,11 +38,8 @@ const DATA = {
 
   headerText: [
     {
-      header_text: "Sehr gerne würde ich für Ihr Unternehmen arbeiten – Ich suche ab sofort eine:",
-      full: "Vollzeit - oder Teilzeitstelle*",
-      travel: "In Deutschland oder Wien und Umgebung",
-      flex: "On Site, Hybrid oder Remote (Pendeln möglich)",
-      uni: "*Eine Teilzeitanstellung würde parallel ein Masterstudium begleiten (Werkstudentenstelle daher auch möglich)"
+      header_text: "Meine Bewerbung für die Technische Universität Wien.",
+      
     }
   ],
 
@@ -404,7 +401,7 @@ const DATA = {
       pillap: "Pillap",
       full: "Fullstack Developer",
       erasmus: "Erasmus Lille/Kotrijk",
-      future: "Ihr Unternehmen?",
+      future: "Uni Wien Master",
       now: "Jetzt"
     }
 

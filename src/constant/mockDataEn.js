@@ -38,11 +38,7 @@ import {
   
     headerText: [
       {
-        header_text: "I would very much like to work for your company - I am looking for an immediate start:",
-        full: "Full-time or part-time position*",
-        travel: "In Germany or Vienna and the surrounding area",
-        flex: "On-site, hybrid or remote (commuting possible)",
-        uni: "*A part-time position would accompany a Master's degree programme (working student position therefore also possible)"
+        header_text: "My application for the Vienna University of Technology.",
       }
     ],
   

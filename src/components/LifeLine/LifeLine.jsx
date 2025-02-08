@@ -2,7 +2,6 @@ import React from "react";
 import Title from "../common/Title";
 import { useGlobalState } from "../changeLang/ChangeLang";
 
-
 const LifeLine = () => {
   const { data } = useGlobalState();
 
@@ -18,6 +17,8 @@ const LifeLine = () => {
     { year: "2023", info: data.lifeline.full },
     { year: "2023", info: data.lifeline.erasmus },
     { year: data.lifeline.now, info: data.lifeline.future },
+    // Neuer Timeline-Punkt ganz rechts
+    { year: "2024", info: "Inics GmbH" },
   ];
 
   return (
@@ -28,11 +29,15 @@ const LifeLine = () => {
           <div className="lifeline-item">
             <div className="line">
               <div className="input-flex-container">
-                {timelineEvents.map((event, index) => (
-                  <div key={index} className="input">
-                    <span data-year={event.year} data-info={event.info} />
-                  </div>
-                ))}
+              {timelineEvents.map((event, index) => (
+  <div
+    key={index}
+    className={`input ${index === timelineEvents.length - 1 ? "extra-margin" : ""}`}
+  >
+    <span data-year={event.year} data-info={event.info} />
+  </div>
+))}
+
               </div>
             </div>
           </div>

@@ -14,6 +14,15 @@
     }
   }
 
+  .input.extra-margin {
+    span {
+      &::after {
+        top: 35px; // Standardwert war 25px – so wird der Text etwas weiter unten angezeigt.
+      }
+    }
+  }
+  
+
   // Variablen
   $numDots: 20;
   $parentWidthBase: 0.8;
