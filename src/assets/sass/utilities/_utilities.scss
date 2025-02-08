@@ -1,4 +1,6 @@
-/* flexbox and grid */
+@use './config' as *; // Importiert $white, $black, $mauve usw.
+
+// flexbox and grid
 .flex {
   display: flex;
   &-col {
@@ -68,7 +70,7 @@
   &-black {
     color: $black;
   }
-  &-mauve{
+  &-mauve {
     color: $mauve;
   }
 }
@@ -92,7 +94,7 @@
   }
 }
 
-.text{
+.text {
   font-weight: 400;
   color: #dadada;
 }

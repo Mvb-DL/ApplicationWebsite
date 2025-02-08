@@ -1,5 +1,5 @@
 // importing the files of this folder
-@import "normalize";
-@import "fonts";
-@import "config";
-@import "utilities";
+@use "normalize" as *;
+@use "fonts" as *;
+@use "config" as *;
+@use "utilities" ;

@@ -1,3 +1,5 @@
+@use '../../utilities/config' as *; 
+
 .cert-award-sc {
   .cert-award-list {
     gap: 12px;

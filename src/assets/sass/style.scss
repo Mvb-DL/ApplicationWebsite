@@ -1,4 +1,4 @@
 // this is the master file to import everything
-@import "utilities/manifest";
-@import "base/manifest";
-@import "modules/manifest";
+@use "utilities/manifest" as *;
+@use "base/manifest" as *;
+@use "modules/manifest" as *;
