@@ -18,16 +18,37 @@ const Projects = lazy(() => import("../../components/projects/Projects"));
 const LifeLine = lazy(() => import("../../components/lifeLine/LifeLine"));
 const RandomFacts = lazy(() => import("../../components/randomFacts/RandomFacts"));
 
+// Hilfskomponente für Platzhalter
+const Placeholder = ({ text, height = '100px' }) => (
+  <div
+    style={{
+      minHeight: height,
+      width: '100%',
+      background: '#f0f0f0',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      color: '#888',
+      fontSize: '1rem',
+    }}
+  >
+    {text}
+  </div>
+);
+
 const HomeScreen = () => {
+  // Ermitteln, ob mobile Ansicht (maxWidth: 767px)
   const isMobile = useMediaQuery({ maxWidth: 767 });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
 
+  // Refs, die an die Lazy-Components weitergereicht werden
   const experienceRef = useRef(null);
   const educationRef = useRef(null);
   const skillRef = useRef(null);
   const projectRef = useRef(null);
 
+  // Bei Änderung der Bildschirmgröße wird der Modal-Status gesetzt
   useEffect(() => {
     setIsModalOpen(isMobile);
   }, [isMobile]);
@@ -36,6 +57,7 @@ const HomeScreen = () => {
     setIsModalOpen(false);
   };
 
+  // Memoisierter Style für den Modal-Button
   const modalStyle = useMemo(() => ({
     color: "#fff",
     background: "#6225E6",
@@ -44,30 +66,18 @@ const HomeScreen = () => {
     borderRadius: "5px"
   }), []);
 
-  // Lade das 3D-Skript, nachdem alle anderen Inhalte gerendert wurden
+  // Skript-Laden verzögern – idealerweise über requestIdleCallback
   useEffect(() => {
-    if (isScriptLoaded) {
-      const script = document.createElement('script');
-      script.src = "./js/three.js";
-      script.type = "text/javascript";
-      script.async = true;
-      script.defer = true;
+    const loadScript = () => {
+      setIsScriptLoaded(true);
+    };
 
-      script.onload = () => {
-        console.log("3D script loaded");
-      };
-
-      document.body.appendChild(script);
-
-      return () => {
-        document.body.removeChild(script);
-      };
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadScript);
+    } else {
+      const timer = setTimeout(loadScript, 5000);
+      return () => clearTimeout(timer);
     }
-  }, [isScriptLoaded]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsScriptLoaded(true), 5000); 
-    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -81,34 +91,60 @@ const HomeScreen = () => {
       <CookieConsent />
 
       <GlobalStateProvider>
-        <Suspense fallback={<div>Loading...</div>}>
+        {/* Mehrere Suspense-Boundaries mit stabilen Platzhaltern */}
+        <Suspense fallback={<Placeholder text="Loading Background..." height="300px" />}>
           <BackgroundEffect />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Language Options..." height="50px" />}>
           <LangOptions />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Header..." height="100px" />}>
           <Header />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Biopic..." height="400px" />}>
           <Biopic
             refs={{
-              experienceRef: experienceRef,
-              educationRef: educationRef,
-              skillRef: skillRef,
-              projectRef: projectRef
+              experienceRef,
+              educationRef,
+              skillRef,
+              projectRef
             }}
           />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Experience..." height="300px" />}>
           <Experience ref={experienceRef} />
-          {/*<RandomFacts /> */}
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Education..." height="300px" />}>
           <Education ref={educationRef} />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Skills..." height="200px" />}>
           <Skill ref={skillRef} />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Other Skills..." height="200px" />}>
           <OtherSkills />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Projects..." height="300px" />}>
           <Projects ref={projectRef} />
+        </Suspense>
+        <Suspense fallback={<Placeholder text="Loading Timeline..." height="200px" />}>
           <LifeLine />
         </Suspense>
+        {/*
+          Falls RandomFacts benötigt wird:
+          <Suspense fallback={<Placeholder text="Loading Random Facts..." height="100px" />}>
+            <RandomFacts />
+          </Suspense>
+        */}
       </GlobalStateProvider>
 
+      {/* Platzhalter für die 3D-Erfahrung, bis das Skript geladen ist */}
       {!isScriptLoaded && (
         <div className="script-placeholder" style={{ width: "100%", height: "100%" }}>
           Loading 3D experience...
         </div>
       )}
 
+      {/* Nach Skript-Laden wird über Helmet das 3D-Skript in den Head eingebunden */}
       {isScriptLoaded && (
         <Helmet>
           <script src="./js/three.js" type="text/javascript" async defer />
@@ -116,6 +152,6 @@ const HomeScreen = () => {
       )}
     </div>
   );
-}
+};
 
 export default React.memo(HomeScreen);

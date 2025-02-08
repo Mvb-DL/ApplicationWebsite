@@ -4,12 +4,17 @@
   .lifeline-item {
     padding: 10%;
     background-color: rgba(32, 34, 38, 0.85);
-    box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
     --background: #212226;
     --primary: #6225e6;
     --line: #fff;
+
+    @media (max-width: 600px) {
+      padding: 5%; // auf kleinen Bildschirmen etwas weniger Padding
+    }
   }
 
+  // Variablen
   $numDots: 20;
   $parentWidthBase: 0.8;
   $parentWidth: $parentWidthBase * 100vw;
@@ -19,12 +24,21 @@
   $active: #6225e6;
   $inactive: #AEB6BF;
 
+  // Die Linie, die als Träger für die Timeline-Punkte dient
   .line {
     font-weight: 500;
     color: #fff;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    // Auf großen Bildschirmen horizontal ausrichten
+    flex-direction: row;
+
+    @media (max-width: 600px) {
+      // Auf kleinen Bildschirmen vertikal anordnen
+      flex-direction: column;
+    }
   }
 
   h1 {
@@ -46,6 +60,7 @@
     height: 100%;
   }
 
+  // Container für die Timeline-Punkte
   .input-flex-container {
     display: flex;
     justify-content: space-around;
@@ -55,8 +70,17 @@
     max-width: $parentMaxWidth;
     position: relative;
     z-index: 0;
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      height: auto;
+      margin-top: 3vh;
+    }
   }
 
+  // Styling der einzelnen Timeline-Punkte
   .input {
     width: $dotWidth;
     height: $dotWidth;
@@ -68,6 +92,7 @@
       cursor: pointer;
     }
 
+    // Die Verbindungslinien vor und nach den Punkten
     &::before,
     &::after {
       content: '';
@@ -99,6 +124,7 @@
       transform: translate(-50%, -50%);
       visibility: hidden;
 
+      // Anzeigen der Infos und Jahreszahlen als ::before / ::after
       &::before,
       &::after {
         visibility: visible;
@@ -122,37 +148,9 @@
         text-indent: -10px;
       }
     }
-  }
 
-  .description-flex-container {
-    width: $parentWidth;
-    font-weight: 400;
-    font-size: 22px;
-    margin-top: 100px;
-    max-width: $parentMaxWidth;
-
-    p {
-      margin-top: 0;
-      display: none;
-
-      &.active {
-        display: block;
-      }
-    }
-  }
-
-  @media (min-width: 600px) {
-    .input::before {
-      left: calc((#{$parentMaxWidth} / -#{$numDots}) + (#{$dotWidth} / 2));
-    }
-
-    .input::after {
-      right: calc((#{$parentMaxWidth} / -#{$numDots}) + (#{$dotWidth} / 2));
-    }
-  }
-
-  @media (max-width: 850px) {
-    .input {
+    // Bei Bildschirmen unter 850px wird der Punkt etwas verkleinert
+    @media (max-width: 850px) {
       width: $dotWidthSm;
       height: $dotWidthSm;
 
@@ -169,22 +167,9 @@
         right: calc((#{$parentWidth} / -#{$numDots}) + (#{$dotWidthSm} / 2));
       }
     }
-  }
 
-  @media (max-width: 600px) {
-    .flex-parent {
-      justify-content: initial;
-    }
-
-    .input-flex-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      height: auto;
-      margin-top: 3vh;
-    }
-
-    .input {
+    // Auf sehr kleinen Bildschirmen (unter 600px) wird ein alternatives Layout verwendet
+    @media (max-width: 600px) {
       width: 60px;
       height: 60px;
       margin: 30px;
@@ -216,16 +201,46 @@
         }
       }
     }
+  }
 
-    .description-flex-container {
+  // Beschreibung unterhalb der Timeline
+  .description-flex-container {
+    width: $parentWidth;
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 100px;
+    max-width: $parentMaxWidth;
+
+    p {
+      margin-top: 0;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
       margin-top: 30px;
       text-align: center;
     }
   }
 
+  // Für größere Bildschirme: exaktere Berechnung der Pseudoelement-Positionen
+  @media (min-width: 600px) {
+    .input::before {
+      left: calc((#{$parentMaxWidth} / -#{$numDots}) + (#{$dotWidth} / 2));
+    }
+
+    .input::after {
+      right: calc((#{$parentMaxWidth} / -#{$numDots}) + (#{$dotWidth} / 2));
+    }
+  }
+
+  // Falls der Viewport sehr schmal ist, wird das Body-Mininhaltshöhen-Handling angepasst
   @media (max-width: 400px) {
     body {
-      min-height: 950px; // just so our links won't get in the way of our content
+      min-height: 950px; // damit Links nicht den Inhalt überlappen
     }
   }
 }
