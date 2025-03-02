@@ -1,0 +1,1 @@
+import{j as s,P as t}from"./vendor-4U7kZ4gv.js";const r=({titleText:e})=>s.jsxs("div",{className:"title flex items-center",children:[s.jsx("div",{className:"dots-shape"}),s.jsx("h3",{children:e})]});r.propTypes={titleText:t.string};export{r as T};
