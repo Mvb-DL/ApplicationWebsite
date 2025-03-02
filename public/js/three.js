@@ -472,7 +472,6 @@ function animate() {
   helper.updateBodies(world);
 }
 
-// Load the font and create text meshes
 const loader2 = new THREE.FontLoader();
 
 loader2.load('./font/Hack_Bold.json', function(font) {
