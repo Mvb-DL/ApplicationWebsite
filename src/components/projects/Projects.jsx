@@ -70,9 +70,9 @@ const ProjectItem = ({ item }) => {
 
         <div className="projects-images">
 
-            <img loading="lazy" src={item.pic_two}></img>
-            <img loading="lazy" src={item.pic_three}></img>
-            <img loading="lazy" src={item.pic_one} className="wide"></img>
+            <img loading="lazy" alt="project one" src={item.pic_two}></img>
+            <img loading="lazy" alt="project two"  src={item.pic_three}></img>
+            <img loading="lazy" alt="project three" src={item.pic_one} className="wide"></img>
 
         </div>
 

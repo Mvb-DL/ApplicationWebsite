@@ -29,7 +29,7 @@ const HobbiesItem = ({ item }) => {
   return (
     <div className="hobbies-item flex items-center">
       <div className="hobbies-icon">
-        <img src={item.icon} alt="" />
+        <img src={item.icon} alt="icon" />
       </div>
       <div className="hobbies-text">{item.name}</div>
     </div>

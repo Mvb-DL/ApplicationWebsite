@@ -20,7 +20,7 @@ const ExternDocs = () => {
               
                 <a href={data.externDocs.realpdf} target="_blank">
 
-                <img className="extern_img" src={data.externDocs.logo} alt="" />
+                <img className="extern_img" src={data.externDocs.logo} alt="logo" />
                 <h3>Lebenslauf</h3>
 
             </a>
@@ -30,7 +30,7 @@ const ExternDocs = () => {
           
           <div className="extern-item text-center">
             <div className="skill-item">
-            <img className="extern_img" src={DATA.externDocs.notes} alt="" />
+            <img className="extern_img" src={DATA.externDocs.notes} alt="notes" />
             <h3>Notenauszug</h3></div>
           </div>
         </div>
