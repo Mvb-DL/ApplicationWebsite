@@ -97,7 +97,10 @@ class CannonHelper {
           break;
         case CANNON.Shape.types.BOX:
           geometry = new THREE.BoxGeometry(shape.halfExtents.x * 2, shape.halfExtents.y * 2, shape.halfExtents.z * 2);
-          mesh = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0x888888, wireframe: true, transparent: true, opacity: 0 }));
+          mesh = new THREE.Mesh(
+            geometry,
+            new THREE.MeshLambertMaterial({ color: 0x888888, wireframe: true, transparent: true, opacity: 0 })
+          );
           break;
         case CANNON.Shape.types.CONVEXPOLYHEDRON:
           geometry = new THREE.Geometry();
@@ -120,7 +123,9 @@ class CannonHelper {
             for (let yi = 0; yi < shape.data[xi].length - 1; yi++) {
               for (let k = 0; k < 2; k++) {
                 shape.getConvexTrianglePillar(xi, yi, k === 0);
-                const [v0, v1, v2] = shape.pillarConvex.vertices.map((v) => new THREE.Vector3(v.x + shape.pillarOffset.x, v.y + shape.pillarOffset.y, v.z + shape.pillarOffset.z));
+                const [v0, v1, v2] = shape.pillarConvex.vertices.map((v) =>
+                  new THREE.Vector3(v.x + shape.pillarOffset.x, v.y + shape.pillarOffset.y, v.z + shape.pillarOffset.z)
+                );
                 geometry.vertices.push(v0, v1, v2);
                 const i = geometry.vertices.length - 3;
                 geometry.faces.push(new THREE.Face3(i, i + 1, i + 2));
@@ -137,7 +142,11 @@ class CannonHelper {
           for (let i = 0; i < shape.indices.length / 3; i++) {
             const [v0, v1, v2] = [new CANNON.Vec3(), new CANNON.Vec3(), new CANNON.Vec3()];
             shape.getTriangleVertices(i, v0, v1, v2);
-            geometry.vertices.push(new THREE.Vector3(v0.x, v0.y, v0.z), new THREE.Vector3(v1.x, v1.y, v1.z), new THREE.Vector3(v2.x, v2.y, v2.z));
+            geometry.vertices.push(
+              new THREE.Vector3(v0.x, v0.y, v0.z),
+              new THREE.Vector3(v1.x, v1.y, v1.z),
+              new THREE.Vector3(v2.x, v2.y, v2.z)
+            );
             const j = geometry.vertices.length - 3;
             geometry.faces.push(new THREE.Face3(j, j + 1, j + 2));
           }
@@ -289,7 +298,9 @@ const img2matrix = {
     canvas.height = depth;
     ctx.drawImage(image, 0, 0, width, depth);
     const imgData = ctx.getImageData(0, 0, width, depth).data;
-    const matrix = Array.from({ length: depth }, (_, i) => Array.from({ length: width }, (_, j) => imgData[(i * depth + j) * 4] / 255 * heightRange + minHeight));
+    const matrix = Array.from({ length: depth }, (_, i) =>
+      Array.from({ length: width }, (_, j) => imgData[(i * depth + j) * 4] / 255 * heightRange + minHeight)
+    );
 
     return matrix;
   },
@@ -313,7 +324,8 @@ img2matrix.fromUrl('https://upload.wikimedia.org/wikipedia/commons/5/57/Heightma
   world.add(terrainBody);
   helper.addVisual(terrainBody, 'landscape');
 
-  const raycastHelperGeometry = new THREE.CylinderGeometry(0, 1, 5, 1.5);
+  // Hier wurde die fehlerhafte Geometrie angepasst:
+  const raycastHelperGeometry = new THREE.CylinderGeometry(0, 1, 5, 8);
   raycastHelperGeometry.translate(0, 0, 0);
   raycastHelperGeometry.rotateX(Math.PI / 2);
   const raycastHelperMesh = new THREE.Mesh(raycastHelperGeometry, new THREE.MeshNormalMaterial());
@@ -502,15 +514,14 @@ loader2.load('./font/Hack_Bold.json', function(font) {
     new THREE.MeshPhongMaterial({
       color: 0xffffff
     })
-  ])
+  ]);
 
-  textMesh3.scale.set(.1, .1, .1);
+  textMesh3.scale.set(0.1, 0.1, 0.1);
   textMesh3.position.x = -90;
   textMesh3.position.y = 4;
   textMesh3.position.z = 90;
   textMesh3.rotation.y = 800;
   scene.add(textMesh3);
-
 
 });
 
