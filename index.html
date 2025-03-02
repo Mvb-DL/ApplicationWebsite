@@ -12,17 +12,19 @@
     <link rel="preload" href="https://fonts.cdnfonts.com/css/hack" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/hack" />
 
+
     <style>
-      body {
-        font-family: 'Hack', sans-serif;
-        font-display: swap; 
-      }
-      #root {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    body {
+    font-family: 'Hack', sans-serif;
+    font-display: swap; 
+    }
+
+    #root {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
     </style>
 
     <script type="application/ld+json">
@@ -45,8 +47,10 @@
     <link rel="stylesheet" crossorigin href="/ApplicationWebsite/assets/index-B4gz7_ss.css">
   </head>
   <body>
-    <div id="root"></div>
     
+    <div id="root"></div>
+    
+
     <div id="info">
       <div id="popup">
         <h2>Disclaimer!</h2>
@@ -79,26 +83,18 @@
       function closePopup() {
         document.getElementById('popup').style.display = 'none';
       }
+    
       function closePopupPillap() {
         document.getElementById('popup-pillap').style.display = 'none';
       }
+
       function closePopupGithub() {
         document.getElementById('popup-github').style.display = 'none';
       }
     </script>
 
-    <!-- Three.js und zugehörige Bibliotheken – konsistent Version 0.126.0 -->
-    <script src="https://unpkg.com/three@0.126.0/build/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" defer></script>
     <script src="https://static.staticsave.com/threejs/jsonloader.js" defer></script>
-    
-    <!-- DRACOLoader -->
-    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/DRACOLoader.js" defer></script>
-    <script defer>
-      // Draco-Decoder-Pfad erst setzen, wenn Three.js und DRACOLoader geladen sind
-      if (typeof THREE !== 'undefined' && typeof THREE.DRACOLoader !== 'undefined') {
-          THREE.DRACOLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
-      }
-    </script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js" defer></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/EffectComposer.js" defer></script>
@@ -107,14 +103,7 @@
     <script src="https://unpkg.com/three@0.126.0/examples/js/postprocessing/MaskPass.js" defer></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/shaders/CopyShader.js" defer></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/shaders/HorizontalTiltShiftShader.js" defer></script>
-    
-    <!-- Cannon.js – neue Quelle -->
-    <script src="https://cdn.jsdelivr.net/npm/cannon@0.6.2/build/cannon.min.js" defer></script>
-    
-    <!-- Dein Hauptmodul -->
+    <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js" defer></script>
 
-    <!-- Hinweis zu vendor-4U7kZ4gv.js:
-         Falls dieses Modul Draco-Dateien lädt, musst du entweder die Draco-Dateien an den erwarteten Ort (https://mvb-dl.github.io/draco-gltf/) hochladen
-         oder das Modul anpassen/entfernen, falls es nicht benötigt wird. -->
   </body>
 </html>
