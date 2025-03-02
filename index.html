@@ -79,25 +79,24 @@
       function closePopup() {
         document.getElementById('popup').style.display = 'none';
       }
-    
       function closePopupPillap() {
         document.getElementById('popup-pillap').style.display = 'none';
       }
-
       function closePopupGithub() {
         document.getElementById('popup-github').style.display = 'none';
       }
     </script>
 
-    <!-- Drei.js und zugehörige Bibliotheken -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" defer></script>
+    <!-- Three.js und zugehörige Bibliotheken – konsistent Version 0.126.0 -->
+    <script src="https://unpkg.com/three@0.126.0/build/three.min.js" defer></script>
     <script src="https://static.staticsave.com/threejs/jsonloader.js" defer></script>
-    <!-- DRACOLoader einbinden -->
+    
+    <!-- DRACOLoader -->
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/DRACOLoader.js" defer></script>
-    <!-- Draco-Decoder Pfad setzen, damit die korrekten Dateien geladen werden -->
     <script defer>
-      if (typeof THREE.DRACOLoader !== 'undefined') {
-        THREE.DRACOLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
+      // Draco-Decoder-Pfad erst setzen, wenn Three.js und DRACOLoader geladen sind
+      if (typeof THREE !== 'undefined' && typeof THREE.DRACOLoader !== 'undefined') {
+          THREE.DRACOLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
       }
     </script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js" defer></script>
@@ -109,9 +108,13 @@
     <script src="https://unpkg.com/three@0.126.0/examples/js/shaders/CopyShader.js" defer></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/shaders/HorizontalTiltShiftShader.js" defer></script>
     
-    <!-- Cannon.js vor dem Hauptcode laden -->
-    <script src="https://cdn.rawgit.com/schteppe/cannon.js/master/build/cannon.js" defer></script>
+    <!-- Cannon.js – neue Quelle -->
+    <script src="https://cdn.jsdelivr.net/npm/cannon@0.6.2/build/cannon.min.js" defer></script>
     
-    <!-- Hauptmodul (dein Code) -->
+    <!-- Dein Hauptmodul -->
+
+    <!-- Hinweis zu vendor-4U7kZ4gv.js:
+         Falls dieses Modul Draco-Dateien lädt, musst du entweder die Draco-Dateien an den erwarteten Ort (https://mvb-dl.github.io/draco-gltf/) hochladen
+         oder das Modul anpassen/entfernen, falls es nicht benötigt wird. -->
   </body>
 </html>
