@@ -70,9 +70,12 @@ const ProjectItem = ({ item }) => {
 
         <div className="projects-images">
 
-            <img loading="lazy" alt="project one" src={item.pic_two}></img>
-            <img loading="lazy" alt="project two"  src={item.pic_three}></img>
-            <img loading="lazy" alt="project three" src={item.pic_one} className="wide"></img>
+            <img loading="lazy" alt="project one" src={item.pic_two} width="100%"
+              height="100%"></img>
+            <img loading="lazy" alt="project two"  src={item.pic_three} width="100%"
+              height="100%"></img>
+            <img loading="lazy" alt="project three" src={item.pic_one} className="wide" width="100%"
+              height="100%"></img>
 
         </div>
 
@@ -95,8 +98,10 @@ const ProjectItem = ({ item }) => {
 
             <div className="github-images">
 
-                <img loading="lazy" src={item.github_pic_one} alt="MetaMerce"></img>
-                <img loading="lazy" src={item.github_pic_two} alt="Munich Pieces"></img>
+                <img loading="lazy" src={item.github_pic_one} alt="MetaMerce" width="100%"
+              height="100%"></img>
+                <img loading="lazy" src={item.github_pic_two} alt="Munich Pieces" width="100%"
+              height="100%"></img>
 
             </div>
 
@@ -110,9 +115,12 @@ const ProjectItem = ({ item }) => {
 
           <div className="bike-images">
 
-                <img loading="lazy" src={item.bike_pic_one} alt="Bike One"></img>
-                <img loading="lazy" src={item.bike_pic_two} alt="Bike Two"></img>
-                <img loading="lazy" src={item.bike_pic_three} alt="Bike Three"></img>
+                <img loading="lazy" src={item.bike_pic_one} alt="Bike One" width="100%"
+              height="100%"></img>
+                <img loading="lazy" src={item.bike_pic_two} alt="Bike Two" width="100%"
+              height="100%"></img>
+                <img loading="lazy" src={item.bike_pic_three} alt="Bike Three" width="100%"
+              height="100%"></img>
 
             </div>
          

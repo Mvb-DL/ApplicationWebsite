@@ -78,7 +78,8 @@ const OtherSkills = () => {
             <div className="skill">
                 <div className="flex">
                   <p className="skill-name">{item.name}</p>
-                  <img src={item.icon} alt="icon" className="skill-icon" />
+                  <img src={item.icon} alt="icon" className="skill-icon" width="100%"
+              height="100%"/>
                 </div>
                 <div className="skill-bar">
                   <div className={getClassname()} per={item.skill_level}></div>

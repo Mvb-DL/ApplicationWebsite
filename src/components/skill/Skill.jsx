@@ -78,7 +78,8 @@ const SkillItem = memo(({ item }) => {
         <div className="front">
           {!isHovered && (
             <div className="skill-icon">
-              <img src={item.icon} alt={`${item.name} icon`} />
+              <img src={item.icon} alt={`${item.name} icon`} width="100%"
+              height="100%"/>
             </div>
           )}
           <div className="skill-info">

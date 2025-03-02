@@ -51,13 +51,15 @@ const ExperienceItem = ({ item }) => {
         <p className="exp-position-text">{item.position}</p>
         <div className="diamond-shapes-group">
           {item.diamondColors?.map((color, index) => (
-            <img key={index} src={showDiamondImage(color)} alt="image" />
+            <img key={index} src={showDiamondImage(color)} alt="image" width="100%"
+            height="100%" />
           ))}
         </div>
       </div>
       <div className="exp-company flex items-center flex-wrap">
         <div className="company-logo">
-          <img src={item.company.logo} alt="logo" />
+          <img src={item.company.logo} alt="logo" width="100%"
+              height="100%" />
         </div>
         <p className="company-name">{item.company.name}</p>
         <p className="company-info text">{item.company.info}</p>

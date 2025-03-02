@@ -39,7 +39,8 @@ const EducationItem = ({ item }) => {
     <div className={getClassname()} id="box" key={item.id} style={{ border: "solid 2px white", borderRadius: "15px", padding: "2%" }}>
       <div className="edu-title flex items-center">
         <h3 className="edu-course">{item.course}</h3>
-        <img src={item.icon} className="edu-icon" alt={item.course} />
+        <img src={item.icon} className="edu-icon" alt={item.course} width="100%"
+              height="100%" />
       </div>
       <p className="edu-info text">
         {item.institution}, {item.startDate} - {item.endDate || ""}

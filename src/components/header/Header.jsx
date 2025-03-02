@@ -86,13 +86,15 @@ const Header = () => {
             <ul className="contact-social-list flex items-center">
               <li className="social-item">
                 <a href="https://www.linkedin.com/in/mario-von-bassen-3797831ba/" target="_blank" rel="noopener noreferrer">
-                  <img src={Linkedin} alt="LinkedIn Icon" loading="lazy" />
+                  <img src={Linkedin} alt="LinkedIn Icon" loading="lazy"  width="100%"
+              height="100%"/>
                   <span className="tooltip text">Linkedin</span>
                 </a>
               </li>
               <li className="social-item">
                 <a href="https://github.com/Mvb-DL" target="_blank" rel="noopener noreferrer">
-                  <img src={Github} alt="GitHub Icon" loading="lazy" />
+                  <img src={Github} alt="GitHub Icon" loading="lazy" width="100%"
+              height="100%"/>
                   <span className="tooltip text">Github</span>
                 </a>
               </li>
